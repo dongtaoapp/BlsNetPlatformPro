@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addManikinWnd</class>
+ <widget class="QWidget" name="addManikinWnd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>518</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+	border-style:solid;
+	width: 81px;
+	height: 30px;
+	background-color: #21b0f2;
+	border-radius: 2px;
+	width: 33px;
+	height: 16px;
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 70px;
+	color: #ffffff;
+}</string>
+  </property>
+  <widget class="QLineEdit" name="ManikinEdit">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>150</y>
+     <width>365</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 71px;
+height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 18px;
+font-weight: normal;
+line-height: 70px;
+color: #b6b8c4;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="okBtn">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>370</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>确认</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="returnBtn">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>370</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>90</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">width: 96px;
+height: 17px;
+font-family: PingFangSC-Regular;
+font-size: 18px;
+font-weight: normal;
+line-height: 70px;
+color: #b6b8c4;</string>
+   </property>
+   <property name="text">
+    <string>输入标识码</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

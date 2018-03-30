@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1220984A-66C2-3C27-A8CF-0157085D5C2D}</ProjectGuid>
+    <RootNamespace>simulatorBase</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin71\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>simulatorBase</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolSet>v140</PlatformToolSet>
+    <OutputDirectory>..\bin71\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>simulatorBase</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" /><ItemDefinitionGroup><ClCompile><MultiProcessorCompilation>true</MultiProcessorCompilation></ClCompile></ItemDefinitionGroup><PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')"><QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild></PropertyGroup><Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')"><Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." /></Target><ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')"><Import Project="$(QtMsBuild)\qt.props" /></ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\bin71\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">simulatorBase</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\bin71\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">simulatorBase</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;D:\Boost\boost_1_56_0;D:\Boost\pugixml-1.8\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;release;$(QTDIR)\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;SIMULATORBASE_LIBRARY;BOOST_USE_LIB;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\bin71\common.lib;..\bin71\elementParse.lib;D:\Boost\pugixml-1.8\vc14_x86\lib\pugixml.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Boost\pugixml-1.8\vc14_x86\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\simulatorBase.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;SIMULATORBASE_LIBRARY;BOOST_USE_LIB;QT_DEPRECATED_WARNINGS;QT_NO_DEBUG;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;D:\Boost\boost_1_56_0;D:\Boost\pugixml-1.8\src;$(QTDIR)\include;$(QTDIR)\include\QtCore;debug;$(QTDIR)\mkspecs\win32-msvc2015;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;SIMULATORBASE_LIBRARY;BOOST_USE_LIB;QT_DEPRECATED_WARNINGS;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\bin71\common.lib;..\bin71\elementParse.lib;D:\Boost\pugixml-1.8\vc14_x86\lib\pugixmld.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\Boost\pugixml-1.8\vc14_x86\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\simulatorBase.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;SIMULATORBASE_LIBRARY;BOOST_USE_LIB;QT_DEPRECATED_WARNINGS;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CPRRealTimeUpdateInterface.cpp" />
+    <ClCompile Include="CPRShowInterfacesAggregate.cpp" />
+    <ClCompile Include="CPRStatIrp.cpp" />
+    <ClCompile Include="EventIrp_ClockTime.cpp" />
+    <ClCompile Include="EventIrp_SimulateTrigger.cpp" />
+    <ClCompile Include="FrameFlowIrp.cpp" />
+    <ClCompile Include="ICO2SimulateSign.cpp" />
+    <ClCompile Include="ICardiogramLeads.cpp" />
+    <ClCompile Include="IDistributeSimulateData.cpp" />
+    <ClCompile Include="IGetPhysioloySimulateData.cpp" />
+    <ClCompile Include="IHeartStartSign.cpp" />
+    <ClCompile Include="IPaneMoveControlInterface.cpp" />
+    <ClCompile Include="IPhysiologyStartSign.cpp" />
+    <ClCompile Include="IPnPFacility.cpp" />
+    <ClCompile Include="ITransportOrderIrpToSimulator.cpp" />
+    <ClCompile Include="ITypePhysiologyDefaultRange.cpp" />
+    <ClCompile Include="IUpdateLogDataInterface.cpp" />
+    <ClCompile Include="OpABPBuildInterface.cpp" />
+    <ClCompile Include="OpECGBuildInterface.cpp" />
+    <ClCompile Include="OpEtCO2BuildInterface.cpp" />
+    <ClCompile Include="OpLogInterface.cpp" />
+    <ClCompile Include="OpPhysBuildInterfacesAggregate.cpp" />
+    <ClCompile Include="OpRespBuildInterface.cpp" />
+    <ClCompile Include="OpSpO2BuildInterface.cpp" />
+    <ClCompile Include="ShowABPUpdateInterface.cpp" />
+    <ClCompile Include="ShowCPRActUpdateInterface.cpp" />
+    <ClCompile Include="ShowCPRStatisticUpdateInterface.cpp" />
+    <ClCompile Include="ShowECGUpdateInterface.cpp" />
+    <ClCompile Include="ShowEtCO2UpdateInterface.cpp" />
+    <ClCompile Include="ShowEventSignUpdateInterface.cpp" />
+    <ClCompile Include="ShowFrameNameUpdateInterface.cpp" />
+    <ClCompile Include="ShowFrameTimeUpdateInterface.cpp" />
+    <ClCompile Include="ShowGeneralNoRangeUpdateInterface.cpp" />
+    <ClCompile Include="ShowGeneralUpdateInterface.cpp" />
+    <ClCompile Include="ShowNIBPUpdateInterface.cpp" />
+    <ClCompile Include="ShowPaceUpdateInterface.cpp" />
+    <ClCompile Include="ShowPatientTimeUpdateInterface.cpp" />
+    <ClCompile Include="ShowRespRateUpdateInterface.cpp" />
+    <ClCompile Include="ShowScenarioRunTimeUpdateInterface.cpp" />
+    <ClCompile Include="ShowScriptTrainNameUpdateInterface.cpp" />
+    <ClCompile Include="ShowSpO2UpdateInterface.cpp" />
+    <ClCompile Include="ShowTempUpdateInterface.cpp" />
+    <ClCompile Include="SimulateBaseGlobal.cpp" />
+    <ClCompile Include="SimulatorOrderIrp.cpp" />
+    <ClCompile Include="SymptomsShowInterfacesAggregate.cpp" />
+    <ClCompile Include="SyncPnpFacilities.cpp" />
+    <ClCompile Include="VirCardiogramParam.cpp" />
+    <ClCompile Include="VirEventIrp.cpp" />
+    <ClCompile Include="WatchBarsShowInterfacesAggregate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CPRRealTimeUpdateInterface.h" />
+    <ClInclude Include="CPRShowInterfacesAggregate.h" />
+    <ClInclude Include="CPRStatIrp.h" />
+    <ClInclude Include="EventIrp_ClockTime.h" />
+    <ClInclude Include="EventIrp_SimulateTrigger.h" />
+    <ClInclude Include="FrameFlowIrp.h" />
+    <ClInclude Include="ICO2SimulateSign.h" />
+    <ClInclude Include="ICardiogramLeads.h" />
+    <ClInclude Include="IDistributeSimulateData.h" />
+    <ClInclude Include="IGetPhysioloySimulateData.h" />
+    <ClInclude Include="IHeartStartSign.h" />
+    <ClInclude Include="IPaneMoveControlInterface.h" />
+    <ClInclude Include="IPhysiologyStartSign.h" />
+    <ClInclude Include="IPnPFacility.h" />
+    <ClInclude Include="ITransportOrderIrpToSimulator.h" />
+    <ClInclude Include="ITypePhysiologyDefaultRange.h" />
+    <ClInclude Include="IUpdateLogDataInterface.h" />
+    <ClInclude Include="OpABPBuildInterface.h" />
+    <ClInclude Include="OpECGBuildInterface.h" />
+    <ClInclude Include="OpEtCO2BuildInterface.h" />
+    <ClInclude Include="OpLogInterface.h" />
+    <ClInclude Include="OpPhysBuildInterfacesAggregate.h" />
+    <ClInclude Include="OpRespBuildInterface.h" />
+    <ClInclude Include="OpSpO2BuildInterface.h" />
+    <ClInclude Include="ShowABPUpdateInterface.h" />
+    <ClInclude Include="ShowCPRActUpdateInterface.h" />
+    <ClInclude Include="ShowCPRStatisticUpdateInterface.h" />
+    <ClInclude Include="ShowECGUpdateInterface.h" />
+    <ClInclude Include="ShowEtCO2UpdateInterface.h" />
+    <ClInclude Include="ShowEventSignUpdateInterface.h" />
+    <ClInclude Include="ShowFrameNameUpdateInterface.h" />
+    <ClInclude Include="ShowFrameTimeUpdateInterface.h" />
+    <ClInclude Include="ShowGeneralNoRangeUpdateInterface.h" />
+    <ClInclude Include="ShowGeneralUpdateInterface.h" />
+    <ClInclude Include="ShowNIBPUpdateInterface.h" />
+    <ClInclude Include="ShowPaceUpdateInterface.h" />
+    <ClInclude Include="ShowPatientTimeUpdateInterface.h" />
+    <ClInclude Include="ShowRespRateUpdateInterface.h" />
+    <ClInclude Include="ShowScenarioRunTimeUpdateInterface.h" />
+    <ClInclude Include="ShowScriptTrainNameUpdateInterface.h" />
+    <ClInclude Include="ShowSpO2UpdateInterface.h" />
+    <ClInclude Include="ShowTempUpdateInterface.h" />
+    <ClInclude Include="SimulateBaseGlobal.h" />
+    <ClInclude Include="SimulatorOrderIrp.h" />
+    <ClInclude Include="SymptomsShowInterfacesAggregate.h" />
+    <ClInclude Include="SyncPnpFacilities.h" />
+    <ClInclude Include="VirCardiogramParam.h" />
+    <ClInclude Include="VirEventIrp.h" />
+    <ClInclude Include="WatchBarsShowInterfacesAggregate.h" />
+    <ClInclude Include="simulatorbase_global.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" /><ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')"><Import Project="$(QtMsBuild)\qt.targets" /></ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,12 @@
+#ifndef TRANSLAYER_GLOBAL_H
+#define TRANSLAYER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(TRANSLAYER_LIBRARY)
+#  define TRANSLAYERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define TRANSLAYERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // TRANSLAYER_GLOBAL_H

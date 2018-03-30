@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterManikinWnd</class>
+ <widget class="QWidget" name="RegisterManikinWnd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>518</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RegisterManikinWnd</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">image:url(:/image/ss.png);</string>
+  </property>
+  <widget class="QPushButton" name="ConManikinBtn">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>500</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+width: 33px;
+height: 16px;
+font-family: PingFangSC-Regular;
+font-size: 16px;
+font-weight: normal;
+line-height: 70px;
+color: #ffffff;
+background-color: #21b0f2;
+border-radius: 2px;</string>
+   </property>
+   <property name="text">
+    <string>连接</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addManikinBtn">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>560</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+width: 86px;
+height: 16px;
+font-family: PingFangSC-Regular;
+font-size: 16px;
+font-weight: normal;
+line-height: 70px;
+color: #ffffff;</string>
+   </property>
+   <property name="text">
+    <string>增加模拟人</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

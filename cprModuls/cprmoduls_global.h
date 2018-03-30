@@ -1,0 +1,12 @@
+#ifndef CPRMODULS_GLOBAL_H
+#define CPRMODULS_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(CPRMODULS_LIBRARY)
+#  define CPRMODULSSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define CPRMODULSSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // CPRMODULS_GLOBAL_H

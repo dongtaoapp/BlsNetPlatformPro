@@ -1,0 +1,1833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PieWnd</class>
+ <widget class="QWidget" name="PieWnd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1151</width>
+    <height>761</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QLabel" name="titlela">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>按压准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="backgroundla">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>200</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #c0c0c0;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressrightValueLa">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>100</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="line1">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>100</y>
+     <width>307</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+
+border: 1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PressBreakTimeLa">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>110</y>
+     <width>141</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #f00e37;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="pressdeepwnd" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>159</y>
+     <width>181</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressla1">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>160</y>
+     <width>141</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;
+border-style:solid;
+border-bottom:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>按压深度的准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>210</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>260</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f5bf39;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>310</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f00e37;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_1">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>210</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>正常</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>260</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>不足</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_3">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>310</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>过多</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="PressNormalDataLa">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>210</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="presslackDatala">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>260</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressOverDatala">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>310</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="presspostionwnd" native="true">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>159</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressla1_2">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>160</y>
+     <width>151</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;
+border-style:solid;
+border-bottom:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>按压位置的准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_3">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>270</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f5bf39;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postiondowndatala">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>248</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_2">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>225</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>上</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postionrightdatala">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>295</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postioncenteldatala">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>200</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_4">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>270</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>左</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_3">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>225</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #a404b5;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="leavepostionwnd" native="true">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>159</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressla1_3">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>160</y>
+     <width>141</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;
+border-style:solid;
+border-bottom:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>放松位置准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_5">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>270</y>
+     <width>51</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f45720;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_4">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>214</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>完全</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_6">
+   <property name="geometry">
+    <rect>
+     <x>1030</x>
+     <y>265</y>
+     <width>51</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>不完全</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_5">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>220</y>
+     <width>51</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_6">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>200</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_7">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>248</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #73b83b;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_8">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>295</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f45720;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_9">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>200</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>中央</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_7">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>248</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>下</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_7">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>295</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>右</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postionupdatala">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>225</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postionleftdatala">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>270</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postionrightla">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>211</y>
+     <width>54</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 70px;
+
+	color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>50</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="postionerrorla">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>261</y>
+     <width>54</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 70px;
+
+	color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>50</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>70</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>70</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>70</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>70</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>按压次数</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>70</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>按压的平均深度</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>70</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>按压的平均速度</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="presstimedatala">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>105</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>按压次数</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressdeepdatala">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>101</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>平均深度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressspeachdatala">
+   <property name="geometry">
+    <rect>
+     <x>950</x>
+     <y>105</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>平均速度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>380</y>
+     <width>1151</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(125, 125, 125, 0.2);
+	border: solid 1px rgba(0, 0, 0, 0.2);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>430</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>平均体积</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>430</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>通气次数</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvflwdatala">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>460</y>
+     <width>141</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>642ml/sec</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>430</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>430</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+border-bottom:1px solid  #c0c0c0;
+
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: 600;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>平均通风流量</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="backgroundla_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>450</y>
+     <width>200</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #c0c0c0;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="titlela_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>420</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>吹气准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvtimesdatala">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>465</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>3/10</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvmmdatala">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>461</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+   </property>
+   <property name="text">
+    <string>843ml</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>430</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>430</y>
+     <width>1</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvrightvaluela">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>450</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_10">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>580</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_8">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>620</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f5bf39;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvmmlackdatala">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>620</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvmmnormaldatala">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>580</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvmmOverdatala">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>660</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_9">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>620</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>不足</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressla1_4">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>520</y>
+     <width>141</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;
+border-style:solid;
+border-bottom:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>通气体积的准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_4">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>660</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>过多</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="vcvmmwnd" native="true">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>181</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_2">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>660</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f00e37;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_11">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>580</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>正常</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvtimeOverdatala">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>660</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_12">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>580</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #21b0f2;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_5">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>660</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f00e37;
+	border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press3_6">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>660</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>过多</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvtimelackdatala">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>620</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressla1_5">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>520</y>
+     <width>141</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">height: 14px;
+font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;
+border-style:solid;
+border-bottom:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>通气时间的准确性</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press1_13">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>580</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>正常</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_10">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>620</y>
+     <width>33</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #f5bf39;
+border-radius: 5px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="vcvtimenormaldatala">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>580</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="vcvtimewnd" native="true">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>520</y>
+     <width>191</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="press2_11">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>620</y>
+     <width>27</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 14px;
+font-weight: normal;
+line-height: 70px;
+color: #000000;</string>
+   </property>
+   <property name="text">
+    <string>不足</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>550</y>
+     <width>300</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Medium;
+font-size: 20px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;
+border:1px solid #c0c0c0;</string>
+   </property>
+   <property name="text">
+    <string>成绩</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>580</y>
+     <width>150</width>
+     <height>110</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>15</y>
+      <width>36</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/image/scores.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="scorela">
+    <property name="geometry">
+     <rect>
+      <x>35</x>
+      <y>72</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: PingFangSC-Medium;
+font-size: 30px;
+font-weight: normal;
+line-height: 70px;
+color: #f00e37;</string>
+    </property>
+    <property name="text">
+     <string>100</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>580</y>
+     <width>150</width>
+     <height>110</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>26</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/image/heart.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>26</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image:url(:/image/lung.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="heartdatala">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: PingFangSC-Regular;
+font-size: 18px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+    </property>
+    <property name="text">
+     <string>100%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lungdatala">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>70</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: PingFangSC-Regular;
+font-size: 18px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;</string>
+    </property>
+    <property name="text">
+     <string>100%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

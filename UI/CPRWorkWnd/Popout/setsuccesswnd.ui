@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SetSuccessWnd</class>
+ <widget class="QDialog" name="SetSuccessWnd">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1066</width>
+    <height>698</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel#operateTimeLabel,#breakTimeLabel,#pressLabel,#pressRightLabel,#HandModelLabel,#blowingLabel,#pressfrequencyLabel{
+border-style:solid;
+font-family: PingFangSC-Regular;
+font-size: 20px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;
+
+border-bottom:1px solid  #21b0f2;
+}
+
+QLabel#la1,#la2,#la3,#la4,#la5,#la6,#la7{
+	border-style:solid;
+	font-family: PingFangSC-Regular;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 70px;
+	color: #21b0f2;
+}
+QPushButton#saveBtn,#cancelBtn{
+	border-style:solid;
+	background-color:#21b0f2;
+	color:white;
+	font-family: PingFangSC-Regular;
+	font-size: 18px;
+	
+}
+QPushButton#popularizeBtn,#acbtn{
+	border-style:solid;
+	font-family: PingFangSC-Regular;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 70px;
+	color: #21b0f2;
+}
+QSpinBox{
+	font-family: PingFangSC-Regular;
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 70px;
+	color: #21b0f2;
+}
+QSpinBox::up-button {
+   subcontrol-position:right;
+	   
+}
+QSpinBox::down-button {
+	subcontrol-position:left
+;
+	image: url(:/image/down.png) 
+}</string>
+  </property>
+  <widget class="QLabel" name="titleLa">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1066</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: PingFangSC-Regular;
+font-size: 24px;
+font-weight: normal;
+line-height: 70px;
+color: #21b0f2;
+background-color: #373950;</string>
+   </property>
+   <property name="text">
+    <string>      CPR抢救成功条件设置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>1004</x>
+     <y>20</y>
+     <width>31</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-style:solid;
+image:url(:/image/1.png)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="operateTimeLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>150</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>操作时间</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="breakTimeLabel">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>150</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>中断时间</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressLabel">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>150</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>按压时间占比</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressRightLabel">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>150</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>按压正确率</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="blowingLabel">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>410</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>吹起正确率</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pressfrequencyLabel">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>410</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>按压频率正确率</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="HandModelLabel">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>410</y>
+     <width>200</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>操作模式</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignHCenter|Qt::AlignTop</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelBtn">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>630</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveBtn">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>630</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="popularizeBtn">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>490</y>
+     <width>74</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>普及</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="acbtn">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>490</y>
+     <width>74</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>实战</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la1">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>235</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>分</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>235</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>秒</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>235</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>秒</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la4">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>235</y>
+     <width>21</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la5">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>235</y>
+     <width>21</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la6">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>495</y>
+     <width>21</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="la7">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>495</y>
+     <width>21</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
