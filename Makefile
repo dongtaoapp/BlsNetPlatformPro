@@ -24,42 +24,42 @@ SYMLINK       = $(QMAKE) -install ln -f -s
 DEL_DIR       = rmdir
 MOVE          = move
 SUBTARGETS    =  \
-		sub-E--BlsNetPlatformPro-UI-UI-pro
+		sub-E--CPRGit-UI-UI-pro
 
 
-sub-E--BlsNetPlatformPro-UI-UI-pro-qmake_all:  FORCE
+sub-E--CPRGit-UI-UI-pro-qmake_all:  FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
-	cd UI\ && $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile
+	cd UI\ && $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile
 	@set MAKEFLAGS=$(MAKEFLAGS)
 	cd UI\ && $(MAKE) -f Makefile qmake_all
-sub-E--BlsNetPlatformPro-UI-UI-pro: FORCE
+sub-E--CPRGit-UI-UI-pro: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile
-sub-E--BlsNetPlatformPro-UI-UI-pro-make_first: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile
+sub-E--CPRGit-UI-UI-pro-make_first: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile 
-sub-E--BlsNetPlatformPro-UI-UI-pro-all: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile 
+sub-E--CPRGit-UI-UI-pro-all: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile all
-sub-E--BlsNetPlatformPro-UI-UI-pro-clean: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile all
+sub-E--CPRGit-UI-UI-pro-clean: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile clean
-sub-E--BlsNetPlatformPro-UI-UI-pro-distclean: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile clean
+sub-E--CPRGit-UI-UI-pro-distclean: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile distclean
-sub-E--BlsNetPlatformPro-UI-UI-pro-install_subtargets: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile distclean
+sub-E--CPRGit-UI-UI-pro-install_subtargets: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile install
-sub-E--BlsNetPlatformPro-UI-UI-pro-uninstall_subtargets: FORCE
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile install
+sub-E--CPRGit-UI-UI-pro-uninstall_subtargets: FORCE
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile uninstall
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile uninstall
 
 Makefile: BlsNetPlatformPro.pro F:\QT5.7\5.7\msvc2015\mkspecs\win32-msvc2015\qmake.conf F:\QT5.7\5.7\msvc2015\mkspecs\features\spec_pre.prf \
 		F:\QT5.7\5.7\msvc2015\mkspecs\common\angle.conf \
@@ -369,39 +369,39 @@ BlsNetPlatformPro.pro:
 qmake: FORCE
 	@$(QMAKE) -spec win32-msvc2015 -o Makefile BlsNetPlatformPro.pro
 
-qmake_all: sub-E--BlsNetPlatformPro-UI-UI-pro-qmake_all FORCE
+qmake_all: sub-E--CPRGit-UI-UI-pro-qmake_all FORCE
 
-make_first: sub-E--BlsNetPlatformPro-UI-UI-pro-make_first  FORCE
-all: sub-E--BlsNetPlatformPro-UI-UI-pro-all  FORCE
-clean: sub-E--BlsNetPlatformPro-UI-UI-pro-clean  FORCE
-distclean: sub-E--BlsNetPlatformPro-UI-UI-pro-distclean  FORCE
+make_first: sub-E--CPRGit-UI-UI-pro-make_first  FORCE
+all: sub-E--CPRGit-UI-UI-pro-all  FORCE
+clean: sub-E--CPRGit-UI-UI-pro-clean  FORCE
+distclean: sub-E--CPRGit-UI-UI-pro-distclean  FORCE
 	-$(DEL_FILE) Makefile
-install_subtargets: sub-E--BlsNetPlatformPro-UI-UI-pro-install_subtargets FORCE
-uninstall_subtargets: sub-E--BlsNetPlatformPro-UI-UI-pro-uninstall_subtargets FORCE
+install_subtargets: sub-E--CPRGit-UI-UI-pro-install_subtargets FORCE
+uninstall_subtargets: sub-E--CPRGit-UI-UI-pro-uninstall_subtargets FORCE
 
-sub-E--BlsNetPlatformPro-UI-UI-pro-debug:
+sub-E--CPRGit-UI-UI-pro-debug:
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile debug
-debug: sub-E--BlsNetPlatformPro-UI-UI-pro-debug
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile debug
+debug: sub-E--CPRGit-UI-UI-pro-debug
 
-sub-E--BlsNetPlatformPro-UI-UI-pro-release:
+sub-E--CPRGit-UI-UI-pro-release:
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile release
-release: sub-E--BlsNetPlatformPro-UI-UI-pro-release
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile release
+release: sub-E--CPRGit-UI-UI-pro-release
 
-sub-E--BlsNetPlatformPro-UI-UI-pro-check:
+sub-E--CPRGit-UI-UI-pro-check:
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile check
-check: sub-E--BlsNetPlatformPro-UI-UI-pro-check
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile check
+check: sub-E--CPRGit-UI-UI-pro-check
 
-sub-E--BlsNetPlatformPro-UI-UI-pro-benchmark:
+sub-E--CPRGit-UI-UI-pro-benchmark:
 	@if not exist UI\ mkdir UI\ & if not exist UI\ exit 1
 	@set MAKEFLAGS=$(MAKEFLAGS)
-	cd UI\ && ( if not exist Makefile $(QMAKE) E:\BlsNetPlatformPro\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile benchmark
-benchmark: sub-E--BlsNetPlatformPro-UI-UI-pro-benchmark
+	cd UI\ && ( if not exist Makefile $(QMAKE) E:\CPRGit\UI\UI.pro -spec win32-msvc2015 -o Makefile ) && $(MAKE) -f Makefile benchmark
+benchmark: sub-E--CPRGit-UI-UI-pro-benchmark
 install:install_subtargets  FORCE
 
 uninstall: uninstall_subtargets FORCE

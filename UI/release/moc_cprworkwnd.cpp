@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_CPRWorkWnd_t {
-    QByteArrayData data[14];
-    char stringdata0[191];
+    QByteArrayData data[12];
+    char stringdata0[173];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,21 +32,18 @@ static const qt_meta_stringdata_CPRWorkWnd_t qt_meta_stringdata_CPRWorkWnd = {
 QT_MOC_LITERAL(0, 0, 10), // "CPRWorkWnd"
 QT_MOC_LITERAL(1, 11, 9), // "maxsignal"
 QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 12), // "listWndState"
-QT_MOC_LITERAL(4, 35, 4), // "show"
-QT_MOC_LITERAL(5, 40, 18), // "ListWndItemClicked"
-QT_MOC_LITERAL(6, 59, 24), // "ListWndItemDoubleClicked"
-QT_MOC_LITERAL(7, 84, 13), // "ManikinRemark"
-QT_MOC_LITERAL(8, 98, 24), // "ManikinDouleClickedEvent"
-QT_MOC_LITERAL(9, 123, 19), // "List2WndItemClicked"
-QT_MOC_LITERAL(10, 143, 15), // "BtnClickedEvent"
-QT_MOC_LITERAL(11, 159, 5), // "index"
-QT_MOC_LITERAL(12, 165, 13), // "downPageEvent"
-QT_MOC_LITERAL(13, 179, 11) // "upPageEvent"
+QT_MOC_LITERAL(3, 22, 18), // "ListWndItemClicked"
+QT_MOC_LITERAL(4, 41, 24), // "ListWndItemDoubleClicked"
+QT_MOC_LITERAL(5, 66, 13), // "ManikinRemark"
+QT_MOC_LITERAL(6, 80, 24), // "ManikinDouleClickedEvent"
+QT_MOC_LITERAL(7, 105, 19), // "List2WndItemClicked"
+QT_MOC_LITERAL(8, 125, 15), // "BtnClickedEvent"
+QT_MOC_LITERAL(9, 141, 5), // "index"
+QT_MOC_LITERAL(10, 147, 13), // "downPageEvent"
+QT_MOC_LITERAL(11, 161, 11) // "upPageEvent"
 
     },
-    "CPRWorkWnd\0maxsignal\0\0listWndState\0"
-    "show\0ListWndItemClicked\0"
+    "CPRWorkWnd\0maxsignal\0\0ListWndItemClicked\0"
     "ListWndItemDoubleClicked\0ManikinRemark\0"
     "ManikinDouleClickedEvent\0List2WndItemClicked\0"
     "BtnClickedEvent\0index\0downPageEvent\0"
@@ -60,36 +57,34 @@ static const uint qt_meta_data_CPRWorkWnd[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x06 /* Public */,
-       3,    1,   60,    2, 0x06 /* Public */,
+       1,    0,   54,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   63,    2, 0x0a /* Public */,
-       6,    1,   64,    2, 0x0a /* Public */,
-       8,    1,   67,    2, 0x0a /* Public */,
-       9,    0,   70,    2, 0x0a /* Public */,
-      10,    1,   71,    2, 0x0a /* Public */,
-      12,    0,   74,    2, 0x0a /* Public */,
-      13,    0,   75,    2, 0x0a /* Public */,
+       3,    0,   55,    2, 0x0a /* Public */,
+       4,    1,   56,    2, 0x0a /* Public */,
+       6,    1,   59,    2, 0x0a /* Public */,
+       7,    0,   62,    2, 0x0a /* Public */,
+       8,    1,   63,    2, 0x0a /* Public */,
+      10,    0,   66,    2, 0x0a /* Public */,
+      11,    0,   67,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,    4,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    7,
-    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    5,
+    QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -103,14 +98,13 @@ void CPRWorkWnd::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->maxsignal(); break;
-        case 1: _t->listWndState((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 2: _t->ListWndItemClicked(); break;
-        case 3: _t->ListWndItemDoubleClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 4: _t->ManikinDouleClickedEvent((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 5: _t->List2WndItemClicked(); break;
-        case 6: _t->BtnClickedEvent((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->downPageEvent(); break;
-        case 8: _t->upPageEvent(); break;
+        case 1: _t->ListWndItemClicked(); break;
+        case 2: _t->ListWndItemDoubleClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->ManikinDouleClickedEvent((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 4: _t->List2WndItemClicked(); break;
+        case 5: _t->BtnClickedEvent((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->downPageEvent(); break;
+        case 7: _t->upPageEvent(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -120,13 +114,6 @@ void CPRWorkWnd::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             typedef void (CPRWorkWnd::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CPRWorkWnd::maxsignal)) {
                 *result = 0;
-                return;
-            }
-        }
-        {
-            typedef void (CPRWorkWnd::*_t)(bool );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&CPRWorkWnd::listWndState)) {
-                *result = 1;
                 return;
             }
         }
@@ -158,13 +145,13 @@ int CPRWorkWnd::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 8;
     }
     return _id;
 }
@@ -173,12 +160,5 @@ int CPRWorkWnd::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void CPRWorkWnd::maxsignal()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
-}
-
-// SIGNAL 1
-void CPRWorkWnd::listWndState(bool _t1)
-{
-    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_END_MOC_NAMESPACE

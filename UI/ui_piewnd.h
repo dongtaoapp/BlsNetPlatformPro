@@ -122,7 +122,7 @@ public:
     {
         if (PieWnd->objectName().isEmpty())
             PieWnd->setObjectName(QStringLiteral("PieWnd"));
-        PieWnd->resize(1151, 761);
+        PieWnd->resize(1183, 762);
         PieWnd->setStyleSheet(QStringLiteral(""));
         titlela = new QLabel(PieWnd);
         titlela->setObjectName(QStringLiteral("titlela"));

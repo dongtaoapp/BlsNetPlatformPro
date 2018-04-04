@@ -27,7 +27,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWnd
 {
 public:
-    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_2;
@@ -65,14 +64,10 @@ public:
 "	line-height: 70px;\n"
 "	color: #b6b8c4;\n"
 "}"));
-        layoutWidget = new QWidget(MainWnd);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 4, 1442, 878));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout = new QVBoxLayout(MainWnd);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -80,7 +75,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        TitleLabel = new QLabel(layoutWidget);
+        TitleLabel = new QLabel(MainWnd);
         TitleLabel->setObjectName(QStringLiteral("TitleLabel"));
         TitleLabel->setMinimumSize(QSize(151, 20));
         TitleLabel->setMaximumSize(QSize(250, 20));
@@ -98,7 +93,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        MinWndBtn = new QPushButton(layoutWidget);
+        MinWndBtn = new QPushButton(MainWnd);
         MinWndBtn->setObjectName(QStringLiteral("MinWndBtn"));
         MinWndBtn->setMinimumSize(QSize(40, 20));
         MinWndBtn->setMaximumSize(QSize(20, 10));
@@ -112,7 +107,7 @@ public:
 
         horizontalLayout->addWidget(MinWndBtn);
 
-        MaxWndBtn = new QPushButton(layoutWidget);
+        MaxWndBtn = new QPushButton(MainWnd);
         MaxWndBtn->setObjectName(QStringLiteral("MaxWndBtn"));
         MaxWndBtn->setMinimumSize(QSize(40, 20));
         MaxWndBtn->setMaximumSize(QSize(20, 10));
@@ -123,7 +118,7 @@ public:
 
         horizontalLayout->addWidget(MaxWndBtn);
 
-        CloseWndBtn = new QPushButton(layoutWidget);
+        CloseWndBtn = new QPushButton(MainWnd);
         CloseWndBtn->setObjectName(QStringLiteral("CloseWndBtn"));
         CloseWndBtn->setMinimumSize(QSize(40, 20));
         CloseWndBtn->setMaximumSize(QSize(20, 10));
@@ -142,23 +137,23 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        CPRWorkBtn = new QPushButton(layoutWidget);
+        CPRWorkBtn = new QPushButton(MainWnd);
         CPRWorkBtn->setObjectName(QStringLiteral("CPRWorkBtn"));
-        CPRWorkBtn->setMinimumSize(QSize(100, 40));
+        CPRWorkBtn->setMinimumSize(QSize(0, 0));
         CPRWorkBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(CPRWorkBtn);
 
-        SCBtn = new QPushButton(layoutWidget);
+        SCBtn = new QPushButton(MainWnd);
         SCBtn->setObjectName(QStringLiteral("SCBtn"));
-        SCBtn->setMinimumSize(QSize(100, 40));
+        SCBtn->setMinimumSize(QSize(0, 0));
         SCBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(SCBtn);
 
-        StatisticsBtn = new QPushButton(layoutWidget);
+        StatisticsBtn = new QPushButton(MainWnd);
         StatisticsBtn->setObjectName(QStringLiteral("StatisticsBtn"));
-        StatisticsBtn->setMinimumSize(QSize(100, 40));
+        StatisticsBtn->setMinimumSize(QSize(0, 0));
         StatisticsBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(StatisticsBtn);
@@ -167,12 +162,16 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
+        horizontalLayout_2->setStretch(0, 1);
+        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_2->setStretch(2, 1);
+        horizontalLayout_2->setStretch(3, 10);
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        stackedWidget = new QStackedWidget(layoutWidget);
+        stackedWidget = new QStackedWidget(MainWnd);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
@@ -188,6 +187,9 @@ public:
 
         verticalLayout->addWidget(stackedWidget);
 
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 2);
+        verticalLayout->setStretch(2, 40);
 
         retranslateUi(MainWnd);
 

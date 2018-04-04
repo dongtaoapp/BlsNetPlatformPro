@@ -12,24 +12,31 @@ line-height: 70px;\
 border-bottom:2px solid #45c0f9;\
 color: #21b0f2;"
 
-
 MainWnd::MainWnd(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWnd)
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() | Qt::FramelessWindowHint);
-    this->setLayout(ui->verticalLayout);
     m_cprworkwnd = new CPRWorkWnd();
     m_scwnd = new SCWnd();
     m_swnd = new StatisticsWnd();
+
+
+    desktopWidget = QApplication::desktop();
+
+
     connect(ui->CPRWorkBtn,SIGNAL(clicked(bool)),this,SLOT(CPRWorkBtnClickedEvent()));
     connect(ui->SCBtn,SIGNAL(clicked(bool)),this,SLOT(SCBtnClickedEvent()));
     connect(ui->StatisticsBtn,SIGNAL(clicked(bool)),this,SLOT(SBtnClickedEvent()));
     connect(ui->MinWndBtn,SIGNAL(clicked(bool)),this,SLOT(MinWndBtnClickedEvent()));
+    connect(ui->MaxWndBtn,SIGNAL(clicked(bool)),this,SLOT(MaxWndBtnClicledEvent()));
     connect(ui->CloseWndBtn,SIGNAL(clicked(bool)),this,SLOT(CloseWndBtnClickedEvent()));
+
+
     WndInit();
     CPRWorkBtnClickedEvent();
+
 }
 
 MainWnd::~MainWnd()
@@ -79,12 +86,14 @@ void MainWnd::ConManikiSuccess()
 
    delete background_label;
    m_choseWnd->hide();
+
+   ui->MaxWndBtn->setEnabled(true);
 }
 
 
+
 /**************
-*
-*按钮点击响应事件
+* 按钮点击响应事件
 **************/
 
 void MainWnd::CPRWorkBtnClickedEvent()
@@ -113,6 +122,15 @@ void MainWnd::MinWndBtnClickedEvent()
     this->showMinimized();
 }
 
+void MainWnd::MaxWndBtnClicledEvent()
+{
+    if(this->isFullScreen()){
+        this->showNormal();
+    }else{
+        this->showFullScreen();
+    }
+}
+
 
 void MainWnd::CloseWndBtnClickedEvent()
 {
@@ -122,7 +140,17 @@ void MainWnd::CloseWndBtnClickedEvent()
 void MainWnd::mousePressEvent (QMouseEvent *event)
 {
    this->xOffset = event->globalPos().rx() - this->pos().rx();
-   this->yOffset = event->globalPos().ry() - this->pos().ry();
+    this->yOffset = event->globalPos().ry() - this->pos().ry();
+}
+
+void MainWnd::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if(!ui->MaxWndBtn->isEnabled()){
+        return;
+    }
+    if((event->buttons() == Qt::LeftButton)&&((0<event->pos().ry())&&(event->pos().ry()<60))){
+        MaxWndBtnClicledEvent();
+    }
 }
 
 void MainWnd::mouseMoveEvent(QMouseEvent * event)

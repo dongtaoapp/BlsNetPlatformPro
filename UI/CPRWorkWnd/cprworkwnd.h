@@ -55,7 +55,6 @@ public:
     QList<QMlistWnd *> GetmListWnd_List(){return mlistWnd_list;}
 Q_SIGNALS:
     void maxsignal();
-    void listWndState(bool show);
 public slots:
     void ListWndItemClicked();
     void ListWndItemDoubleClicked(QString ManikinRemark);

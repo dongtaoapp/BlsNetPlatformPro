@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class Ui_StatisticsWnd
 {
 public:
-    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     QPushButton *PrintBtn;
     QPushButton *SaveBtn;
@@ -39,10 +39,7 @@ public:
     QPushButton *PieBtn;
     QPushButton *BarBtn;
     QSpacerItem *horizontalSpacer_3;
-    QStackedWidget *stackedWidget;
-    QWidget *page;
-    QWidget *page_2;
-    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout;
     QLabel *InfoLa;
     QHBoxLayout *horizontalLayout_2;
@@ -50,20 +47,21 @@ public:
     QPushButton *searchBtn;
     QLabel *label_2;
     QTableView *tableView;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
+    QWidget *page_2;
 
     void setupUi(QWidget *StatisticsWnd)
     {
         if (StatisticsWnd->objectName().isEmpty())
             StatisticsWnd->setObjectName(QStringLiteral("StatisticsWnd"));
-        StatisticsWnd->resize(1440, 878);
+        StatisticsWnd->resize(1455, 800);
         StatisticsWnd->setStyleSheet(QStringLiteral(""));
-        layoutWidget = new QWidget(StatisticsWnd);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(1, 1, 1431, 77));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+        verticalLayout_2 = new QVBoxLayout(StatisticsWnd);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        PrintBtn = new QPushButton(layoutWidget);
+        PrintBtn = new QPushButton(StatisticsWnd);
         PrintBtn->setObjectName(QStringLiteral("PrintBtn"));
         PrintBtn->setMinimumSize(QSize(48, 75));
         PrintBtn->setMaximumSize(QSize(48, 16777215));
@@ -72,7 +70,7 @@ public:
 
         horizontalLayout->addWidget(PrintBtn);
 
-        SaveBtn = new QPushButton(layoutWidget);
+        SaveBtn = new QPushButton(StatisticsWnd);
         SaveBtn->setObjectName(QStringLiteral("SaveBtn"));
         SaveBtn->setMinimumSize(QSize(48, 75));
         SaveBtn->setMaximumSize(QSize(48, 75));
@@ -85,7 +83,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        label = new QLabel(layoutWidget);
+        label = new QLabel(StatisticsWnd);
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(1, 75));
         label->setMaximumSize(QSize(1, 75));
@@ -97,7 +95,7 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        PieBtn = new QPushButton(layoutWidget);
+        PieBtn = new QPushButton(StatisticsWnd);
         PieBtn->setObjectName(QStringLiteral("PieBtn"));
         PieBtn->setMinimumSize(QSize(48, 75));
         PieBtn->setMaximumSize(QSize(48, 75));
@@ -106,7 +104,7 @@ public:
 
         horizontalLayout->addWidget(PieBtn);
 
-        BarBtn = new QPushButton(layoutWidget);
+        BarBtn = new QPushButton(StatisticsWnd);
         BarBtn->setObjectName(QStringLiteral("BarBtn"));
         BarBtn->setMinimumSize(QSize(48, 75));
         BarBtn->setMaximumSize(QSize(48, 75));
@@ -119,31 +117,22 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        stackedWidget = new QStackedWidget(StatisticsWnd);
-        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(280, 80, 1151, 761));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        verticalLayout_2->addLayout(horizontalLayout);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        InfoLa = new QLabel(StatisticsWnd);
+        InfoLa->setObjectName(QStringLiteral("InfoLa"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
-        stackedWidget->setSizePolicy(sizePolicy);
-        stackedWidget->setMinimumSize(QSize(1131, 0));
-        stackedWidget->setStyleSheet(QStringLiteral("background-color:white;"));
-        page = new QWidget();
-        page->setObjectName(QStringLiteral("page"));
-        stackedWidget->addWidget(page);
-        page_2 = new QWidget();
-        page_2->setObjectName(QStringLiteral("page_2"));
-        stackedWidget->addWidget(page_2);
-        layoutWidget1 = new QWidget(StatisticsWnd);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(0, 80, 268, 758));
-        verticalLayout = new QVBoxLayout(layoutWidget1);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        InfoLa = new QLabel(layoutWidget1);
-        InfoLa->setObjectName(QStringLiteral("InfoLa"));
+        sizePolicy.setHeightForWidth(InfoLa->sizePolicy().hasHeightForWidth());
+        InfoLa->setSizePolicy(sizePolicy);
         InfoLa->setMinimumSize(QSize(266, 40));
+        InfoLa->setMaximumSize(QSize(266, 40));
         InfoLa->setStyleSheet(QLatin1String("font-family: PingFangSC-Regular;\n"
 "font-size: 14px;\n"
 "font-weight: normal;\n"
@@ -155,11 +144,12 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        searchEdit = new QLineEdit(layoutWidget1);
+        searchEdit = new QLineEdit(StatisticsWnd);
         searchEdit->setObjectName(QStringLiteral("searchEdit"));
         sizePolicy.setHeightForWidth(searchEdit->sizePolicy().hasHeightForWidth());
         searchEdit->setSizePolicy(sizePolicy);
         searchEdit->setMinimumSize(QSize(230, 41));
+        searchEdit->setMaximumSize(QSize(230, 41));
         searchEdit->setStyleSheet(QLatin1String("border-style:solid;\n"
 "border-left:1px solid #7d7d7d;\n"
 "border-top:1px solid #7d7d7d;\n"
@@ -174,11 +164,11 @@ public:
 
         horizontalLayout_2->addWidget(searchEdit);
 
-        searchBtn = new QPushButton(layoutWidget1);
+        searchBtn = new QPushButton(StatisticsWnd);
         searchBtn->setObjectName(QStringLiteral("searchBtn"));
         sizePolicy.setHeightForWidth(searchBtn->sizePolicy().hasHeightForWidth());
         searchBtn->setSizePolicy(sizePolicy);
-        searchBtn->setMinimumSize(QSize(31, 41));
+        searchBtn->setMinimumSize(QSize(41, 41));
         searchBtn->setCursor(QCursor(Qt::PointingHandCursor));
         searchBtn->setStyleSheet(QLatin1String("border-style:solid;\n"
 "background-color:#2c2e43;\n"
@@ -193,11 +183,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        label_2 = new QLabel(layoutWidget1);
+        label_2 = new QLabel(StatisticsWnd);
         label_2->setObjectName(QStringLiteral("label_2"));
         sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy);
         label_2->setMinimumSize(QSize(266, 30));
+        label_2->setMaximumSize(QSize(266, 30));
         label_2->setStyleSheet(QLatin1String("font-family: PingFangSC-Regular;\n"
 "font-size: 14px;\n"
 "font-weight: normal;\n"
@@ -207,12 +198,46 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        tableView = new QTableView(layoutWidget1);
+        tableView = new QTableView(StatisticsWnd);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setMinimumSize(QSize(266, 625));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(tableView->sizePolicy().hasHeightForWidth());
+        tableView->setSizePolicy(sizePolicy1);
+        tableView->setMinimumSize(QSize(266, 0));
+        tableView->setMaximumSize(QSize(266, 16777215));
 
         verticalLayout->addWidget(tableView);
 
+
+        horizontalLayout_3->addLayout(verticalLayout);
+
+        stackedWidget = new QStackedWidget(StatisticsWnd);
+        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
+        stackedWidget->setSizePolicy(sizePolicy2);
+        stackedWidget->setMinimumSize(QSize(0, 0));
+        stackedWidget->setStyleSheet(QStringLiteral("background-color:white;"));
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        stackedWidget->addWidget(page_2);
+
+        horizontalLayout_3->addWidget(stackedWidget);
+
+        horizontalLayout_3->setStretch(0, 1);
+        horizontalLayout_3->setStretch(1, 4);
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
+        verticalLayout_2->setStretch(0, 1);
+        verticalLayout_2->setStretch(1, 10);
 
         retranslateUi(StatisticsWnd);
 

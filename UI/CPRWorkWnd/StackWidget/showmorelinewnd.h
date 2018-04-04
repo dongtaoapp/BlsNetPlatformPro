@@ -4,8 +4,27 @@
 #include <QStandardItemModel>
 #include <QList>
 #include <QLabel>
+#include <QResizeEvent>
 #include "showlinebasewnd.h"
 #include "qmtabwnd.h"
+
+class MoreWnd : public QTableView{
+    Q_OBJECT
+public :
+    MoreWnd(QWidget *parent = 0);
+    ~MoreWnd(){};
+    void TabInit();
+
+     QList<QMTabwnd *>GetMoreWndlist(){return btnList;}
+protected:
+    void resizeEvent(QResizeEvent *event);
+private:
+     QList<QMTabwnd *> btnList;
+     QStandardItemModel *m_model;
+};
+
+
+
 class showMoreLineWnd : public ShowLineBaseWnd
 {
    Q_OBJECT
@@ -14,18 +33,13 @@ public:
     ~showMoreLineWnd(){;}
     void TabWndInit();
 public:
-    void UpPageEvent();
-    void DownPageEvent();
-    void GetManikinData(QVariant data);
-    QList<QMTabwnd *> GetMoreLineWnd(){return btnList;}
+    void UpPageEvent(){};
+    void DownPageEvent(){};
+    void GetManikinData(QVariant data){};
+    QList<QMTabwnd *> GetMoreLineWnd(){return m_tabwnd->GetMoreWndlist();}
 
-public slots:
-
-    void listWndState(bool show);
 private:
-    QTableView *m_tabwnd;
-    QStandardItemModel *m_model;
-    QList<QMTabwnd *> btnList;
+    MoreWnd *m_tabwnd;
     QLabel *time;//CPR脚本时间
 };
 

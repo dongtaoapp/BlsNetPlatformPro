@@ -6,12 +6,12 @@
 #include "cprworkdefin.h"
 #include <qDebug>
 
-
 CPRWorkWnd::CPRWorkWnd(QWidget *parent) :
     QWidget(parent),fullscreenlist(false),CurrentBtnID(-1),
     ui(new Ui::CPRWorkWnd)
 {
     ui->setupUi(this);
+
     this->setStyleSheet(BtnClickedSheet);
     CurrentManikin = Q_NULLPTR;
     btngroupInit();
@@ -24,7 +24,6 @@ CPRWorkWnd::CPRWorkWnd(QWidget *parent) :
     changeManWnd = new CPRChangeWnd(this);
     ReManWnd = new CPRReManikinWnd(this);
     connect(&btnGroup,SIGNAL(buttonClicked(int)),this,SLOT(BtnClickedEvent(int)));
-
 }
 
 
@@ -144,9 +143,7 @@ void CPRWorkWnd::InitStackWidget()
     listWnd->setGeometry(2,90,1441,760);listWnd->hide();
 
     connect(listWnd,SIGNAL(ManikinDoubleClicked(QString)),this,SLOT(ManikinDouleClickedEvent(QString)));
-    connect(this,SIGNAL(listWndState(bool)),oneLindWnd,SLOT(listWndState(bool)));
-    connect(this,SIGNAL(listWndState(bool)),doubleLineWnd,SLOT(listWndState(bool)));
-    connect(this,SIGNAL(listWndState(bool)),moreLineWnd,SLOT(listWndState(bool)));
+
 }
 
 void CPRWorkWnd::ListWndItemClicked()
@@ -247,11 +244,9 @@ void CPRWorkWnd::BtnClickedEvent(int index)
             ui->stackedWidget->show();listWnd->hide();fullscreenlist = false;
             if(!ui->listWidget->isHidden()){
                 ui->listWidget_2->hide();ui->listWidget->hide();ui->hideListBtn->setStyleSheet(BtnClicked);
-                emit listWndState(false);
             }
             else{
                 ui->listWidget_2->show();ui->listWidget->show(); ui->hideListBtn->setStyleSheet(BtnNoclicked);
-                emit listWndState(true);
             }
             return;
         }
@@ -259,11 +254,9 @@ void CPRWorkWnd::BtnClickedEvent(int index)
              ui->stackedWidget->hide();
             if(!fullscreenlist){
               listWnd->show();ui->listWidget_2->hide();ui->listWidget->hide();ui->showListBtn->setStyleSheet(BtnClicked);fullscreenlist = true;
-              emit listWndState(false);
             }
             else{
                 listWnd->hide();ui->stackedWidget->show();ui->listWidget_2->show();ui->listWidget->show();ui->showListBtn->setStyleSheet(BtnNoclicked);fullscreenlist = false;
-                emit listWndState(true);
             }
         }
         return;

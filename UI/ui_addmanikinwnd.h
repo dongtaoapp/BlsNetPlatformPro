@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -24,9 +25,10 @@ QT_BEGIN_NAMESPACE
 class Ui_addManikinWnd
 {
 public:
+    QGridLayout *gridLayout;
     QLineEdit *ManikinEdit;
-    QPushButton *okBtn;
     QPushButton *returnBtn;
+    QPushButton *okBtn;
     QLabel *label;
 
     void setupUi(QWidget *addManikinWnd)
@@ -48,9 +50,10 @@ public:
 "	line-height: 70px;\n"
 "	color: #ffffff;\n"
 "}"));
+        gridLayout = new QGridLayout(addManikinWnd);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         ManikinEdit = new QLineEdit(addManikinWnd);
         ManikinEdit->setObjectName(QStringLiteral("ManikinEdit"));
-        ManikinEdit->setGeometry(QRect(80, 150, 365, 31));
         ManikinEdit->setStyleSheet(QLatin1String("width: 71px;\n"
 "height: 14px;\n"
 "font-family: PingFangSC-Regular;\n"
@@ -58,17 +61,23 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #b6b8c4;"));
-        okBtn = new QPushButton(addManikinWnd);
-        okBtn->setObjectName(QStringLiteral("okBtn"));
-        okBtn->setGeometry(QRect(310, 370, 91, 23));
-        okBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout->addWidget(ManikinEdit, 1, 0, 1, 2);
+
         returnBtn = new QPushButton(addManikinWnd);
         returnBtn->setObjectName(QStringLiteral("returnBtn"));
-        returnBtn->setGeometry(QRect(90, 370, 91, 23));
         returnBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout->addWidget(returnBtn, 2, 0, 1, 1);
+
+        okBtn = new QPushButton(addManikinWnd);
+        okBtn->setObjectName(QStringLiteral("okBtn"));
+        okBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+        gridLayout->addWidget(okBtn, 2, 1, 1, 1);
+
         label = new QLabel(addManikinWnd);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(80, 90, 231, 31));
         label->setStyleSheet(QLatin1String("width: 96px;\n"
 "height: 17px;\n"
 "font-family: PingFangSC-Regular;\n"
@@ -76,6 +85,12 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #b6b8c4;"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 2);
+
+        gridLayout->setRowStretch(0, 1);
+        gridLayout->setRowStretch(1, 1);
+        gridLayout->setRowStretch(2, 1);
 
         retranslateUi(addManikinWnd);
 
@@ -85,8 +100,8 @@ public:
     void retranslateUi(QWidget *addManikinWnd)
     {
         addManikinWnd->setWindowTitle(QApplication::translate("addManikinWnd", "Form", Q_NULLPTR));
-        okBtn->setText(QApplication::translate("addManikinWnd", "\347\241\256\350\256\244", Q_NULLPTR));
         returnBtn->setText(QApplication::translate("addManikinWnd", "\350\277\224\345\233\236", Q_NULLPTR));
+        okBtn->setText(QApplication::translate("addManikinWnd", "\347\241\256\350\256\244", Q_NULLPTR));
         label->setText(QApplication::translate("addManikinWnd", "\350\276\223\345\205\245\346\240\207\350\257\206\347\240\201", Q_NULLPTR));
     } // retranslateUi
 

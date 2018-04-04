@@ -24,6 +24,9 @@ public :
     LeftWidget(QWidget *parent = 0);
     ~LeftWidget(){;}
     void CreateControl();
+
+
+    QList<QWidget *> widget(){};
 protected:
     void paintEvent(QPaintEvent *event);
 
@@ -37,6 +40,8 @@ private:
 
     QButtonGroup btnGroup;
     int times;
+
+    QList<QWidget *> wndlist;
 };
 
 class showOneLineWnd : public ShowLineBaseWnd
@@ -46,14 +51,13 @@ public:
     showOneLineWnd(QWidget *parent = 0);
     ~showOneLineWnd(){;}
 public:
-    void UpPageEvent();
-    void DownPageEvent();
-    void GetManikinData(QVariant data);
-public slots:
-    void listWndState(bool show);
+    void UpPageEvent(){};
+    void DownPageEvent(){};
+    void GetManikinData(QVariant data){};
 private:
     LeftWidget *lw;
     QLabel *time;//CPR脚本时间
+    QWidget *infoWnd;
 };
 
 #endif // SHOWONELINEWND_H

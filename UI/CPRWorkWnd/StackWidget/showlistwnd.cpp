@@ -19,7 +19,7 @@ showListWnd::showListWnd(QWidget *parent):
 void showListWnd::InitWnd()
 {
     QMlistWnd *item1 = new QMlistWnd(this,QMlistWnd::WhiteBlackground);
-   item1->setGeometry(HInterval,VInterval+HeadWidth,ITemWidth,ITemHeight);
+    item1->setGeometry(HInterval,VInterval+HeadWidth,ITemWidth,ITemHeight);
     item_list.append(item1);
 
     QMlistWnd *item2 = new QMlistWnd(this,QMlistWnd::WhiteBlackground);

@@ -17,7 +17,7 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:strictStrings -Zc:throwingNew -O2 -M
 INCPATH       = -I. -ICPRWorkWnd -ICPRWorkWnd\Popout -ICPRWorkWnd\StackWidget -ILoginWnd -IChartWnd -ICSWnd -I..\simulatorBase -ID:\Boost\pugixml-1.8\src -ID:\Boost\iconv-1.9.2.win32\include -ID:\Boost\boost_1_56_0 -I..\common -IF:\QT5.7\5.7\msvc2015\include -IF:\QT5.7\5.7\msvc2015\include\QtCharts -IF:\QT5.7\5.7\msvc2015\include\QtWidgets -IF:\QT5.7\5.7\msvc2015\include\QtGui -IF:\QT5.7\5.7\msvc2015\include\QtANGLE -IF:\QT5.7\5.7\msvc2015\include\QtCore -Irelease -I. -IF:\QT5.7\5.7\msvc2015\mkspecs\win32-msvc2015 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /INCREMENTAL:NO /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = /LIBPATH:F:\QT5.7\5.7\msvc2015\lib F:\QT5.7\5.7\msvc2015\lib\qtmain.lib shell32.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:E:\BlsNetPlatformPro\bin71 E:\BlsNetPlatformPro\bin71\simulatorBase.lib /LIBPATH:D:\Boost\pugixml-1.8\vc14_x86\lib D:\Boost\pugixml-1.8\vc14_x86\lib\pugixml.lib /LIBPATH:D:\Boost\iconv-1.9.2.win32\lib D:\Boost\iconv-1.9.2.win32\lib\iconv.lib /LIBPATH:D:\Boost\boost_1_56_0\vc12_x86\lib D:\Boost\boost_1_56_0\vc12_x86\lib\libboost_locale-vc120-mt-1_56.lib E:\BlsNetPlatformPro\bin71\common.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Charts.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Widgets.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Gui.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Core.lib 
+LIBS          = /LIBPATH:F:\QT5.7\5.7\msvc2015\lib F:\QT5.7\5.7\msvc2015\lib\qtmain.lib shell32.lib /LIBPATH:C:\utils\my_sql\my_sql\lib /LIBPATH:C:\utils\postgresql\pgsql\lib /LIBPATH:E:\CPRGit\bin71 E:\CPRGit\bin71\simulatorBase.lib /LIBPATH:D:\Boost\pugixml-1.8\vc14_x86\lib D:\Boost\pugixml-1.8\vc14_x86\lib\pugixml.lib /LIBPATH:D:\Boost\iconv-1.9.2.win32\lib D:\Boost\iconv-1.9.2.win32\lib\iconv.lib /LIBPATH:D:\Boost\boost_1_56_0\vc12_x86\lib D:\Boost\boost_1_56_0\vc12_x86\lib\libboost_locale-vc120-mt-1_56.lib E:\CPRGit\bin71\common.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Charts.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Widgets.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Gui.lib F:\QT5.7\5.7\msvc2015\lib\Qt5Core.lib 
 QMAKE         = F:\QT5.7\5.7\msvc2015\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -936,7 +936,7 @@ release\moc_cprworkwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		CPRWorkWnd\Popout\cprremanikinwnd.h \
 		CPRWorkWnd\cprworkwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\cprworkwnd.h -o release\moc_cprworkwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\cprworkwnd.h -o release\moc_cprworkwnd.cpp
 
 release\moc_cpraddmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1038,7 +1038,7 @@ release\moc_cpraddmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialo
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		CPRWorkWnd\Popout\cpraddmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cpraddmanikinwnd.h -o release\moc_cpraddmanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cpraddmanikinwnd.h -o release\moc_cpraddmanikinwnd.cpp
 
 release\moc_cprchangewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1140,7 +1140,7 @@ release\moc_cprchangewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		CPRWorkWnd\Popout\cprchangewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cprchangewnd.h -o release\moc_cprchangewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cprchangewnd.h -o release\moc_cprchangewnd.cpp
 
 release\moc_cprremanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1242,7 +1242,7 @@ release\moc_cprremanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		CPRWorkWnd\Popout\cprremanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cprremanikinwnd.h -o release\moc_cprremanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\cprremanikinwnd.h -o release\moc_cprremanikinwnd.cpp
 
 release\moc_setmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1355,7 +1355,7 @@ release\moc_setmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
 		CPRWorkWnd\Popout\setmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setmanikinwnd.h -o release\moc_setmanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setmanikinwnd.h -o release\moc_setmanikinwnd.cpp
 
 release\moc_setsuccesswnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1468,7 +1468,7 @@ release\moc_setsuccesswnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
 		CPRWorkWnd\Popout\setsuccesswnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setsuccesswnd.h -o release\moc_setsuccesswnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setsuccesswnd.h -o release\moc_setsuccesswnd.cpp
 
 release\moc_setsyswnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdialog.h \
@@ -1578,7 +1578,7 @@ release\moc_setsyswnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
 		CPRWorkWnd\Popout\setsyswnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setsyswnd.h -o release\moc_setsyswnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\Popout\setsyswnd.h -o release\moc_setsyswnd.cpp
 
 release\moc_qmlistwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
@@ -2002,7 +2002,7 @@ release\moc_qmlistwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
 		..\Common\IUpdateShowVir.h \
 		CPRWorkWnd\StackWidget\qmlistwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmlistwnd.h -o release\moc_qmlistwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmlistwnd.h -o release\moc_qmlistwnd.cpp
 
 release\moc_qmtabdoublewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
@@ -2107,7 +2107,7 @@ release\moc_qmtabdoublewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushBut
 		F:\QT5.7\5.7\msvc2015\include\QtGui\QMouseEvent \
 		CPRWorkWnd\StackWidget\qmtabdoublewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmtabdoublewnd.h -o release\moc_qmtabdoublewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmtabdoublewnd.h -o release\moc_qmtabdoublewnd.cpp
 
 release\moc_qmtabwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtGui\QMouseEvent \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qevent.h \
@@ -2212,7 +2212,7 @@ release\moc_qmtabwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtGui\QMouseEvent \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qcursor.h \
 		CPRWorkWnd\StackWidget\qmtabwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmtabwnd.h -o release\moc_qmtabwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\qmtabwnd.h -o release\moc_qmtabwnd.cpp
 
 release\moc_showdoublelinewnd.cpp: CPRWorkWnd\StackWidget\qmtabdoublewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
@@ -2339,11 +2339,12 @@ release\moc_showdoublelinewnd.cpp: CPRWorkWnd\StackWidget\qmtabdoublewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QListWidgetItem \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\QResizeEvent \
 		CPRWorkWnd\StackWidget\showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		CPRWorkWnd\StackWidget\showdoublelinewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showdoublelinewnd.h -o release\moc_showdoublelinewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showdoublelinewnd.h -o release\moc_showdoublelinewnd.cpp
 
 release\moc_showlinebasewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -2444,7 +2445,7 @@ release\moc_showlinebasewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		CPRWorkWnd\StackWidget\showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showlinebasewnd.h -o release\moc_showlinebasewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showlinebasewnd.h -o release\moc_showlinebasewnd.cpp
 
 release\moc_showlistwnd.cpp: CPRWorkWnd\StackWidget\showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
@@ -2873,7 +2874,7 @@ release\moc_showlistwnd.cpp: CPRWorkWnd\StackWidget\showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QList \
 		CPRWorkWnd\StackWidget\showlistwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showlistwnd.h -o release\moc_showlistwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showlistwnd.h -o release\moc_showlistwnd.cpp
 
 release\moc_showmorelinewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QTableView \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtableview.h \
@@ -2995,6 +2996,7 @@ release\moc_showmorelinewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QTableV
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QList \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\QResizeEvent \
 		CPRWorkWnd\StackWidget\showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		CPRWorkWnd\StackWidget\qmtabwnd.h \
@@ -3004,7 +3006,7 @@ release\moc_showmorelinewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QTableV
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h \
 		CPRWorkWnd\StackWidget\showmorelinewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showmorelinewnd.h -o release\moc_showmorelinewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showmorelinewnd.h -o release\moc_showmorelinewnd.cpp
 
 release\moc_showonelinewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qdebug.h \
@@ -3117,7 +3119,7 @@ release\moc_showonelinewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
 		CPRWorkWnd\StackWidget\showonelinewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showonelinewnd.h -o release\moc_showonelinewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CPRWorkWnd\StackWidget\showonelinewnd.h -o release\moc_showonelinewnd.cpp
 
 release\moc_addmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -3218,7 +3220,7 @@ release\moc_addmanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		LoginWnd\addmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\addmanikinwnd.h -o release\moc_addmanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\addmanikinwnd.h -o release\moc_addmanikinwnd.cpp
 
 release\moc_chosemanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QStackedWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstackedwidget.h \
@@ -3355,7 +3357,7 @@ release\moc_chosemanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QStacke
 		LoginWnd\addmanikinwnd.h \
 		LoginWnd\chosemanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\chosemanikinwnd.h -o release\moc_chosemanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\chosemanikinwnd.h -o release\moc_chosemanikinwnd.cpp
 
 release\moc_registermanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -3488,7 +3490,7 @@ release\moc_registermanikinwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWid
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
 		LoginWnd\registermanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\registermanikinwnd.h -o release\moc_registermanikinwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore LoginWnd\registermanikinwnd.h -o release\moc_registermanikinwnd.cpp
 
 release\moc_statisticswnd.cpp: ChartWnd\barwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
@@ -4015,7 +4017,7 @@ release\moc_statisticswnd.cpp: ChartWnd\barwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
 		ChartWnd\statisticswnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\statisticswnd.h -o release\moc_statisticswnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\statisticswnd.h -o release\moc_statisticswnd.cpp
 
 release\moc_piewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -4538,7 +4540,7 @@ release\moc_piewnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtCharts\qtchartsversion.h \
 		ChartWnd\piewnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\piewnd.h -o release\moc_piewnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\piewnd.h -o release\moc_piewnd.cpp
 
 release\moc_barwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -4639,7 +4641,7 @@ release\moc_barwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		ChartWnd\barwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\barwnd.h -o release\moc_barwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore ChartWnd\barwnd.h -o release\moc_barwnd.cpp
 
 release\moc_scwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -4740,7 +4742,7 @@ release\moc_scwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		CSWnd\scwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CSWnd\scwnd.h -o release\moc_scwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore CSWnd\scwnd.h -o release\moc_scwnd.cpp
 
 release\moc_mainwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qwidget.h \
@@ -5610,7 +5612,7 @@ release\moc_mainwnd.cpp: F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		LoginWnd\addmanikinwnd.h \
 		mainwnd.h \
 		F:\QT5.7\5.7\msvc2015\bin\moc.exe
-	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/BlsNetPlatformPro/UI -IE:/BlsNetPlatformPro/UI/CPRWorkWnd -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/Popout -IE:/BlsNetPlatformPro/UI/CPRWorkWnd/StackWidget -IE:/BlsNetPlatformPro/UI/LoginWnd -IE:/BlsNetPlatformPro/UI/ChartWnd -IE:/BlsNetPlatformPro/UI/CSWnd -IE:/BlsNetPlatformPro/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/BlsNetPlatformPro/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore mainwnd.h -o release\moc_mainwnd.cpp
+	F:\QT5.7\5.7\msvc2015\bin\moc.exe $(DEFINES) -D_MSC_VER=1900 -D_WIN32 -IF:/QT5.7/5.7/msvc2015/mkspecs/win32-msvc2015 -IE:/CPRGit/UI -IE:/CPRGit/UI/CPRWorkWnd -IE:/CPRGit/UI/CPRWorkWnd/Popout -IE:/CPRGit/UI/CPRWorkWnd/StackWidget -IE:/CPRGit/UI/LoginWnd -IE:/CPRGit/UI/ChartWnd -IE:/CPRGit/UI/CSWnd -IE:/CPRGit/simulatorBase -ID:/Boost/pugixml-1.8/src -ID:/Boost/iconv-1.9.2.win32/include -ID:/Boost/boost_1_56_0 -IE:/CPRGit/common -IF:/QT5.7/5.7/msvc2015/include -IF:/QT5.7/5.7/msvc2015/include/QtCharts -IF:/QT5.7/5.7/msvc2015/include/QtWidgets -IF:/QT5.7/5.7/msvc2015/include/QtGui -IF:/QT5.7/5.7/msvc2015/include/QtANGLE -IF:/QT5.7/5.7/msvc2015/include/QtCore mainwnd.h -o release\moc_mainwnd.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -6147,9 +6149,32 @@ release\cprworkwnd.obj: CPRWorkWnd\cprworkwnd.cpp CPRWorkWnd/cprworkwnd.h \
 		CPRWorkWnd/Popout/cprchangewnd.h \
 		CPRWorkWnd/Popout/cprremanikinwnd.h \
 		ui_cprworkwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayoutitem.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qgridlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QListWidget \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QSpacerItem \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QStackedWidget \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstackedwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
 		CPRWorkWnd/StackWidget/showdoublelinewnd.h \
 		CPRWorkWnd/StackWidget/qmtabdoublewnd.h \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QListWidget \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\QResizeEvent \
 		CPRWorkWnd/StackWidget/showonelinewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
 		CPRWorkWnd/StackWidget/showmorelinewnd.h \
@@ -6259,7 +6284,50 @@ release\cpraddmanikinwnd.obj: CPRWorkWnd\Popout\cpraddmanikinwnd.cpp CPRWorkWnd/
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qfiledevice.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
-		ui_cpraddmanikinwnd.h
+		ui_cpraddmanikinwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLineEdit \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlineedit.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextcursor.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextformat.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qpen.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h
 
 release\cprchangewnd.obj: CPRWorkWnd\Popout\cprchangewnd.cpp CPRWorkWnd/Popout/cprchangewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
@@ -6360,7 +6428,50 @@ release\cprchangewnd.obj: CPRWorkWnd\Popout\cprchangewnd.cpp CPRWorkWnd/Popout/c
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qfiledevice.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
-		ui_cprchangewnd.h
+		ui_cprchangewnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLineEdit \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlineedit.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextcursor.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextformat.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qpen.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h
 
 release\cprremanikinwnd.obj: CPRWorkWnd\Popout\cprremanikinwnd.cpp CPRWorkWnd/Popout/cprremanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
@@ -6461,7 +6572,44 @@ release\cprremanikinwnd.obj: CPRWorkWnd\Popout\cprremanikinwnd.cpp CPRWorkWnd/Po
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qfiledevice.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
-		ui_cprremanikinwnd.h
+		ui_cprremanikinwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h
 
 release\setmanikinwnd.obj: CPRWorkWnd\Popout\setmanikinwnd.cpp CPRWorkWnd/Popout/setmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QDialog \
@@ -6574,6 +6722,34 @@ release\setmanikinwnd.obj: CPRWorkWnd\Popout\setmanikinwnd.cpp CPRWorkWnd/Popout
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
 		ui_setmanikinwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
 		CPRWorkWnd/cprworkdefin.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug
 
@@ -6688,6 +6864,34 @@ release\setsuccesswnd.obj: CPRWorkWnd\Popout\setsuccesswnd.cpp CPRWorkWnd/Popout
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
 		ui_setsuccesswnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
 		CPRWorkWnd/cprworkdefin.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug
 
@@ -6798,7 +7002,37 @@ release\setsyswnd.obj: CPRWorkWnd\Popout\setsyswnd.cpp CPRWorkWnd/Popout/setsysw
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
-		ui_setsyswnd.h
+		ui_setsyswnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h
 
 release\qmlistwnd.obj: CPRWorkWnd\StackWidget\qmlistwnd.cpp CPRWorkWnd/StackWidget/qmlistwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
@@ -7556,10 +7790,11 @@ release\showdoublelinewnd.obj: CPRWorkWnd\StackWidget\showdoublelinewnd.cpp CPRW
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QListWidgetItem \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\QResizeEvent \
 		CPRWorkWnd/StackWidget/showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		CPRWorkWnd/cprworkdefin.h \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayout.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayoutitem.h \
@@ -8230,6 +8465,7 @@ release\showmorelinewnd.obj: CPRWorkWnd\StackWidget\showmorelinewnd.cpp CPRWorkW
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QList \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\QResizeEvent \
 		CPRWorkWnd/StackWidget/showlinebasewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
 		CPRWorkWnd/StackWidget/qmtabwnd.h \
@@ -8241,11 +8477,11 @@ release\showmorelinewnd.obj: CPRWorkWnd\StackWidget\showmorelinewnd.cpp CPRWorkW
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QDebug \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QGridLayout \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qgridlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayout.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayoutitem.h \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qgridlayout.h
 
 release\showonelinewnd.obj: CPRWorkWnd\StackWidget\showonelinewnd.cpp CPRWorkWnd/StackWidget/showonelinewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
@@ -8372,7 +8608,13 @@ release\showonelinewnd.obj: CPRWorkWnd\StackWidget\showonelinewnd.cpp CPRWorkWnd
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
-		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayoutitem.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qgridlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout
 
 release\addmanikinwnd.obj: LoginWnd\addmanikinwnd.cpp LoginWnd/addmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
@@ -8473,6 +8715,54 @@ release\addmanikinwnd.obj: LoginWnd\addmanikinwnd.cpp LoginWnd/addmanikinwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		ui_addmanikinwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QGridLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qgridlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlayoutitem.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qboxlayout.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLineEdit \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlineedit.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextcursor.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextformat.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qpen.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qtextoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QString
 
 release\chosemanikinwnd.obj: LoginWnd\chosemanikinwnd.cpp LoginWnd/chosemanikinwnd.h \
@@ -8741,14 +9031,25 @@ release\registermanikinwnd.obj: LoginWnd\registermanikinwnd.cpp LoginWnd/registe
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
 		ui_registermanikinwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QString \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QFile \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QScrollBar \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qscrollbar.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QCoreApplication \
-		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
-		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\QIcon
 
 release\statisticswnd.obj: ChartWnd\statisticswnd.cpp ChartWnd/statisticswnd.h \
@@ -9276,6 +9577,17 @@ release\statisticswnd.obj: ChartWnd\statisticswnd.cpp ChartWnd/statisticswnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\QStandardItemModel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
 		ui_statisticswnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLineEdit \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QPushButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QSpacerItem \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QStackedWidget \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QTableView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
 		CPRWorkWnd/cprworkdefin.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\QStandardItem \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
@@ -9801,7 +10113,13 @@ release\piewnd.obj: ChartWnd\piewnd.cpp ChartWnd/piewnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCharts\qpercentbarseries.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCharts\qstackedbarseries.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCharts\qtchartsversion.h \
-		ui_piewnd.h
+		ui_piewnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QGroupBox \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel
 
 release\barwnd.obj: ChartWnd\barwnd.cpp ChartWnd/barwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
@@ -9901,7 +10219,43 @@ release\barwnd.obj: ChartWnd\barwnd.cpp ChartWnd/barwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\qfiledevice.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
-		ui_barwnd.h
+		ui_barwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QCommandLinkButton \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qcommandlinkbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qpushbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractbutton.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h
 
 release\scwnd.obj: CSWnd\scwnd.cpp CSWnd/scwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QWidget \
@@ -10002,9 +10356,40 @@ release\scwnd.obj: CSWnd\scwnd.cpp CSWnd/scwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qvector2d.h \
 		F:\QT5.7\5.7\msvc2015\include\QtGui\qtouchdevice.h \
 		ui_scwnd.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\QVariant \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qaction.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qicon.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qactiongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qcoreapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qeventloop.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qdesktopwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qguiapplication.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qinputmethod.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QButtonGroup \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qbuttongroup.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qheaderview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemview.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractscrollarea.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qabstractitemmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qitemselectionmodel.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractitemdelegate.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyleoption.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractspinbox.h \
+		F:\QT5.7\5.7\msvc2015\include\QtGui\qvalidator.h \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qregularexpression.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qabstractslider.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qstyle.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabbar.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qtabwidget.h \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qrubberband.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QLabel \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qlabel.h \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\qframe.h \
 		F:\QT5.7\5.7\msvc2015\include\QtCore\QString
 
 release\main.obj: main.cpp mainwnd.h \
@@ -11748,8 +12133,13 @@ release\mainwnd.obj: mainwnd.cpp mainwnd.h \
 		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QCheckBox \
 		LoginWnd/addmanikinwnd.h \
 		ui_mainwnd.h \
-		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug \
-		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QAction \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QApplication \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QHeaderView \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QSpacerItem \
+		F:\QT5.7\5.7\msvc2015\include\QtWidgets\QVBoxLayout \
+		F:\QT5.7\5.7\msvc2015\include\QtCore\qDebug
 
 release\qrc_resources.obj: release\qrc_resources.cpp 
 

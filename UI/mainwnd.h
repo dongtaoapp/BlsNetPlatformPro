@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QMouseEvent>
+
 #include "cprworkwnd.h"
 #include "scwnd.h"
 #include "statisticswnd.h"
@@ -30,6 +31,7 @@ protected:
     void ChoseManikinEvent();
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
 public:
     void m_show();
 public slots:
@@ -37,6 +39,7 @@ public slots:
     void SCBtnClickedEvent();
     void SBtnClickedEvent();
     void MinWndBtnClickedEvent();
+    void MaxWndBtnClicledEvent();
     void CloseWndBtnClickedEvent();
     void ConManikiSuccess();
 private:
@@ -48,6 +51,8 @@ private:
     StatisticsWnd *m_swnd;
     int xOffset,yOffset;
     QStringList ConnSuccessManikinRemarkList;
+
+     QDesktopWidget* desktopWidget;
 };
 
 #endif // MAINWND_H

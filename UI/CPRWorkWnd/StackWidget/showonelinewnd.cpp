@@ -3,7 +3,8 @@
 #include <qDebug>
 #include <QPainter>
 #include <QStyleOption>
-
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #define HeadLaSheet "image:url(:/image/Head.png);background-color:rgba(0, 0, 0, 0);"
 #define HeadLaNoSheet "image:url(:/image/HeadNo.png);background-color:rgba(0, 0, 0, 0);"
 #define FingerSheet "image:url(:/image/Finger.png);background-color:rgba(0, 0, 0, 0);"
@@ -36,6 +37,8 @@ LeftWidget::LeftWidget(QWidget *parent):
     this->resize(290,690);
     CreateControl();
     connect(&btnGroup,SIGNAL(buttonClicked(int)),this,SLOT(BtnClicked(int)));
+
+
 }
 
 void LeftWidget::CreateControl()
@@ -109,34 +112,21 @@ showOneLineWnd::showOneLineWnd(QWidget *parent):
 {
     time = new QLabel(this);time->setGeometry(5,5,1152,41);time->setAlignment(Qt::AlignCenter);
     time->setStyleSheet(QString("border-style:solid;border:1px solid rgba(0, 0, 0, 0.5);font-family: PingFangSC-Regular;"
-                                "font-size: 18px;font-weight: 900;color: #88857e;"));
+                               "font-size: 18px;font-weight: 900;color: #88857e;"));
     time->setText("00:00:50");
     lw = new LeftWidget(this);
-    lw->move(0,60);
+    infoWnd = new QWidget(this);
+    infoWnd->setStyleSheet(QString("background-color:red"));
+
+    QVBoxLayout *mainlayout = new QVBoxLayout(this);
+    QHBoxLayout *layout = new QHBoxLayout();
+    layout->addWidget(lw,2);
+    layout->addWidget(infoWnd,6);
+    mainlayout->addWidget(time,2);
+    mainlayout->addLayout(layout,40);
+
 
 }
 
-void showOneLineWnd::UpPageEvent()
-{
-    //TODO
-}
 
-void showOneLineWnd::DownPageEvent()
-{
-    //TODO
-}
 
-void showOneLineWnd::GetManikinData(QVariant data)
-{
-    Q_UNUSED(data);
-}
-
-void showOneLineWnd::listWndState(bool show)
-{
-    if(!show){
-        time->resize(1420,41);
-    }
-    else if(show){
-         time->resize(1152,41);
-    }
-}
