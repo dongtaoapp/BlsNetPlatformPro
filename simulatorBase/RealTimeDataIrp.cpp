@@ -1,4 +1,3 @@
-#include "StdAfx.h"
 #include ".\realtimedatairp.h"
 #include <strstream>
 #include <boost/property_tree/xml_parser.hpp>
@@ -69,7 +68,7 @@ namespace jysoft { namespace irp {
 	//        char *lpData：
 	//        UINT uNumber：
 	// 返回值:  
-	CRealTimeDataIrp * CRealTimeDataIrp::UnzipPackage(const char *lpstrPackage, UINT uNumber)
+    CRealTimeDataIrp * CRealTimeDataIrp::UnzipPackage(const char *lpstrPackage, short uNumber)
 	{
 		/*CRealTimeDataIrp  *pRealTimeIrp = NULL;
 		//解析打包的Irp的内容

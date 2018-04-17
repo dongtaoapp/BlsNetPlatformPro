@@ -5,6 +5,7 @@
 #include ".\TriggerJudgeGlobal.h"
 
 #include "..\common\CommonGlobal.h"
+#include "..\common\EmulateTimer.h"
 #include "..\Common\VirTcpTransferOpGather.h"
 #include "..\Common\NetTransferVir.h"
 
@@ -28,16 +29,16 @@ namespace jysoft { namespace transLayer
 		//将内容传给下位机
 		virtual void TransDownData(irp::CVirtualIrp * pDownIrp);
 		//数据传到程序中
-        virtual void TransUpData(void *lpData, short uNumber) ;
+		virtual void TransUpData(void *lpData, short uNumber) ;
 		//传输CPR数据
 		virtual void TransUpCPRDataFromBuffer(const _CPRData *ptrdwCPRData, int nLength);
 		//上传CPR开始命令
 		virtual void TransUpCPRStartOrder();
 		//上传CPR结束命令
 		virtual void TransUpCPRStopOrder();
-        virtual void SendData(void *lpByte, short uSize);
+		virtual void SendData(void *lpByte, short uSize);
 		//-------------------------------------------------------------------------------------------
-		virtual void OnTime(int nMicroSecond);
+		virtual void OnTime();
 		//开始CPR数据模拟
 		void StartCPRSimulate();
 		//重置CPR缓冲及判断
@@ -51,12 +52,10 @@ namespace jysoft { namespace transLayer
 		inline void set_bTcpEstablishSec( bool bSec ) { m_bTcpEstablishSec = bSec; };
 		inline bool get_bTcpEstablishSec() { return m_bTcpEstablishSec; };
 	protected:
+		utility::CEmulateTimer*   m_pMicrosecTimer;
 		ISimulateTriggerJudge*   m_pTriggerJudgeInterface; 
 	public:
 		CBufferAndJudgeCPR      m_cBufferAndJudgeCPR; 
-		HANDLE                  m_hThrdOut;  //线程退出
-		HANDLE                  m_hThrdFinish;
-		HANDLE                  m_hPause;    //暂停
 	protected:
 		network::CNetTransferVir   *              m_pVirNetTransferPtr;
 		bool                             m_bTcpEstablishSec;

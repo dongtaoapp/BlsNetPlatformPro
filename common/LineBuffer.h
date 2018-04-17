@@ -6,7 +6,7 @@ namespace utility {
 
 //缓冲区特征：初始化后大小不再改变，线性读取数据
 template<class DataType>
-class  AFX_EXT_CLASS CLineBuffer : public CVirBuffer<DataType>
+class  Q_DECL_EXPORT CLineBuffer : public CVirBuffer<DataType>
 {
 public:
 	CLineBuffer(void) : CVirBuffer<DataType>() { };

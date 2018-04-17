@@ -30,7 +30,7 @@ namespace jysoft { namespace simulator {
 		base::COpABPBuildInterface                    *m_pABPBuildInterface;      //有创血压模拟器接口
 	public:
 		//初始化生理体征模拟器
-		virtual void InitialPhysBuilds(transLayer::ITransportOrderIrpToSimulator *pTransportOrderIrp, SimulatePatientType ePatientType) = 0;
+		virtual void InitialPhysBuilds() = 0;
 		//关闭生理体征模拟器
 		virtual void ClosePhysBuilds() = 0;
 	public:  

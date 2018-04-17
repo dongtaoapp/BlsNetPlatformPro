@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       -= gui
+QT       += gui widgets core
 
 DESTDIR += ../bin71
 TARGET = cprModuls
@@ -37,7 +37,16 @@ SOURCES += cprcommonglobal.cpp \
     CPRSimulateJudgeOp.cpp \
     CPRStatisticImplement.cpp \
     INetAgencyClient.cpp \
-    NetAgenciesSendMgr.cpp
+    NetAgenciesSendMgr.cpp \
+    cprrealtimeshowwndx2.cpp \
+    cprrealtimecavue.cpp \
+    ccprrealtimesamplescanvas.cpp \
+    cprsamplebufferstate.cpp \
+    idistributecprrealtimedata.cpp \
+    cprrealtimeshowwndx1.cpp \
+    cprrealtimepresurerateshowwnd.cpp \
+    qrunningtimewnd.cpp \
+    cprrealtimeshowwndx6.cpp
 
 HEADERS += cprcommonglobal.h\
         cprmoduls_global.h \
@@ -49,7 +58,16 @@ HEADERS += cprcommonglobal.h\
     CPRSimulateJudgeOp.h \
     CPRStatisticImplement.h \
     INetAgencyClient.h \
-    NetAgenciesSendMgr.h
+    NetAgenciesSendMgr.h \
+    cprrealtimeshowwndx2.h \
+    cprrealtimecavue.h \
+    ccprrealtimesamplescanvas.h \
+    cprsamplebufferstate.h \
+    idistributecprrealtimedata.h \
+    cprrealtimeshowwndx1.h \
+    cprrealtimepresurerateshowwnd.h \
+    qrunningtimewnd.h \
+    cprrealtimeshowwndx6.h
 
 unix {
     target.path = /usr/lib
@@ -57,3 +75,13 @@ unix {
 }
 
 win32: LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_date_time-vc120-mt-gd-1_56
+
+FORMS += \
+    cprrealtimeshowwndx2.ui \
+    cprrealtimecavue.ui \
+    cprrealtimeshowwndx1.ui \
+    cprrealtimepresurerateshowwnd.ui \
+    cprrealtimeshowwndx6.ui
+
+RESOURCES += \
+    res.qrc

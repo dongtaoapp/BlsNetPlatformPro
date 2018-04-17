@@ -10,7 +10,7 @@ namespace jysoft { namespace simulator {
 			m_pEcgLeadParam[index] = NULL;
 		}
 		m_eBasicRhythm  = BR_None;
-        //m_pI12LeadsStorage  = NULL;
+		m_pI12LeadsStorage  = NULL;
 	}
 
 
@@ -20,10 +20,10 @@ namespace jysoft { namespace simulator {
 		{
 			delete m_pEcgLeadParam[index] ;
 		}
-        //if( m_pI12LeadsStorage != NULL )
-        //{
-        //	m_pI12LeadsStorage->Release();
-        //}
+		if( m_pI12LeadsStorage != NULL )
+		{
+			m_pI12LeadsStorage->Release();
+		}
 	}
 
 	/*******************************************************************************/

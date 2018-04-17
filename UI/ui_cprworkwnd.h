@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -20,7 +21,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,7 +28,8 @@ QT_BEGIN_NAMESPACE
 class Ui_CPRWorkWnd
 {
 public:
-    QVBoxLayout *verticalLayout;
+    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_3;
     QHBoxLayout *horizontalLayout;
     QPushButton *startBtn;
     QPushButton *retBtn;
@@ -54,7 +55,7 @@ public:
     QPushButton *setBtn;
     QPushButton *successSetBtn;
     QPushButton *ManikinSetBtn;
-    QSpacerItem *horizontalSpacer;
+    QLabel *label_5;
     QHBoxLayout *horizontalLayout_2;
     QListWidget *listWidget_2;
     QListWidget *listWidget;
@@ -66,14 +67,19 @@ public:
     {
         if (CPRWorkWnd->objectName().isEmpty())
             CPRWorkWnd->setObjectName(QStringLiteral("CPRWorkWnd"));
-        CPRWorkWnd->resize(1171, 746);
+        CPRWorkWnd->resize(1344, 790);
         CPRWorkWnd->setMinimumSize(QSize(0, 0));
         CPRWorkWnd->setStyleSheet(QLatin1String("QPushButton{\n"
 "	border-style:solid;	\n"
 "}\n"
 ""));
-        verticalLayout = new QVBoxLayout(CPRWorkWnd);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        gridLayout = new QGridLayout(CPRWorkWnd);
+        gridLayout->setSpacing(0);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -236,14 +242,20 @@ public:
 
         horizontalLayout->addWidget(ManikinSetBtn);
 
-        horizontalSpacer = new QSpacerItem(578, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer);
+        horizontalLayout_3->addLayout(horizontalLayout);
+
+        label_5 = new QLabel(CPRWorkWnd);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setStyleSheet(QStringLiteral("background-color:#2c2e43;"));
+
+        horizontalLayout_3->addWidget(label_5);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        gridLayout->addLayout(horizontalLayout_3, 0, 0, 1, 1);
 
         horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         listWidget_2 = new QListWidget(CPRWorkWnd);
         listWidget_2->setObjectName(QStringLiteral("listWidget_2"));
@@ -254,7 +266,11 @@ public:
         listWidget_2->setSizePolicy(sizePolicy);
         listWidget_2->setMinimumSize(QSize(34, 0));
         listWidget_2->setMaximumSize(QSize(34, 16777215));
-        listWidget_2->setStyleSheet(QStringLiteral("border-style:solid;"));
+        listWidget_2->setStyleSheet(QLatin1String("QListWidget{\n"
+"	border-style:solid;\n"
+"	border-right:1px solid #1b1d2d;\n"
+"	border-top:1px solid #1b1d2d;\n"
+"}"));
 
         horizontalLayout_2->addWidget(listWidget_2);
 
@@ -264,7 +280,10 @@ public:
         listWidget->setSizePolicy(sizePolicy);
         listWidget->setMinimumSize(QSize(229, 0));
         listWidget->setMaximumSize(QSize(229, 16777215));
-        listWidget->setStyleSheet(QLatin1String("border-style:solid;\n"
+        listWidget->setStyleSheet(QLatin1String("QListWidget{\n"
+"	border-style:solid;\n"
+"	border-top:1px solid #1b1d2d;\n"
+"}\n"
 ""));
 
         horizontalLayout_2->addWidget(listWidget);
@@ -275,7 +294,8 @@ public:
         stackedWidget->setSizePolicy(sizePolicy);
         stackedWidget->setMinimumSize(QSize(0, 0));
         stackedWidget->setMaximumSize(QSize(16777215, 16777215));
-        stackedWidget->setStyleSheet(QStringLiteral("background-color:white;"));
+        stackedWidget->setStyleSheet(QLatin1String("\n"
+"	background-color:white;"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         stackedWidget->addWidget(page);
@@ -286,15 +306,15 @@ public:
         horizontalLayout_2->addWidget(stackedWidget);
 
         horizontalLayout_2->setStretch(0, 1);
-        horizontalLayout_2->setStretch(1, 7);
         horizontalLayout_2->setStretch(2, 33);
 
-        verticalLayout->addLayout(horizontalLayout_2);
+        gridLayout->addLayout(horizontalLayout_2, 1, 0, 1, 1);
 
-        verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(1, 10);
 
         retranslateUi(CPRWorkWnd);
+
+        stackedWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(CPRWorkWnd);
     } // setupUi
@@ -318,6 +338,7 @@ public:
         setBtn->setText(QString());
         successSetBtn->setText(QString());
         ManikinSetBtn->setText(QString());
+        label_5->setText(QString());
     } // retranslateUi
 
 };

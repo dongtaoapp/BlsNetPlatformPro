@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <atlconv.h>
+#include <objbase.h>
 #include <boost/unordered_map.hpp>
 #include ".\simulatorbase_global.h"
 
@@ -32,9 +34,9 @@ namespace jysoft { namespace simulator {
 		virtual bool IsInitialSendDoubleSampleData() { return true; };
 		virtual void ReLoadCardiogramParam();
 		//返回配置文件的流文件
-        //virtual LPSTREAM GetMakefileStream() ;
+        virtual LPSTREAM GetMakefileStream() ;
 		//返回流文件
-        //virtual LPSTREAM GetFileStream(const std::string &strFileName);
+        virtual LPSTREAM GetFileStream(const std::string &strFileName);
 	public:
 		//返回配置文件的名称
 		std::string getConfigFileName() { return m_setParams["ConfigFileName"]; };
@@ -70,7 +72,7 @@ namespace jysoft { namespace simulator {
 		Extrasys                        m_eExtrasys;
         int                             m_uHR;
 		//------------------------------------------------
-        //IStorage *                      m_pStorages;
+        IStorage *                      m_pStorages;
 	};
 
 }}

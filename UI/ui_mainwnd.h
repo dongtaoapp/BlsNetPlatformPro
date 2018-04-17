@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -27,8 +28,10 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWnd
 {
 public:
+    QGridLayout *gridLayout;
+    QWidget *titleWidget;
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
+    QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_2;
     QLabel *TitleLabel;
     QSpacerItem *horizontalSpacer_3;
@@ -49,8 +52,9 @@ public:
         if (MainWnd->objectName().isEmpty())
             MainWnd->setObjectName(QStringLiteral("MainWnd"));
         MainWnd->resize(1440, 900);
+        MainWnd->setMaximumSize(QSize(16777215, 16777215));
         MainWnd->setStyleSheet(QLatin1String("QWidget{\n"
-"	background-color:#2c2e43\n"
+"	background-color: #373950;	\n"
 "}\n"
 "QWidget#stackedWidget{\n"
 "	border-style:solid;\n"
@@ -64,21 +68,32 @@ public:
 "	line-height: 70px;\n"
 "	color: #b6b8c4;\n"
 "}"));
-        verticalLayout = new QVBoxLayout(MainWnd);
-        verticalLayout->setSpacing(6);
+        gridLayout = new QGridLayout(MainWnd);
+        gridLayout->setSpacing(0);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        titleWidget = new QWidget(MainWnd);
+        titleWidget->setObjectName(QStringLiteral("titleWidget"));
+        titleWidget->setMinimumSize(QSize(0, 40));
+        titleWidget->setMaximumSize(QSize(16777215, 16777215));
+        titleWidget->setStyleSheet(QStringLiteral("background-color:#2c2e43;"));
+        verticalLayout = new QVBoxLayout(titleWidget);
+        verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalSpacer_2 = new QSpacerItem(558, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalSpacer_2 = new QSpacerItem(510, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer_2);
+        horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        TitleLabel = new QLabel(MainWnd);
+        TitleLabel = new QLabel(titleWidget);
         TitleLabel->setObjectName(QStringLiteral("TitleLabel"));
-        TitleLabel->setMinimumSize(QSize(151, 20));
-        TitleLabel->setMaximumSize(QSize(250, 20));
+        TitleLabel->setMinimumSize(QSize(151, 40));
+        TitleLabel->setMaximumSize(QSize(250, 40));
         TitleLabel->setStyleSheet(QLatin1String("width: 222px;\n"
 "height: 17px;\n"
 "font-family: PingFangSC-Regular;\n"
@@ -87,16 +102,17 @@ public:
 "line-height: 70px;\n"
 "color: #b6b8c4;"));
 
-        horizontalLayout->addWidget(TitleLabel);
+        horizontalLayout_3->addWidget(TitleLabel);
 
-        horizontalSpacer_3 = new QSpacerItem(488, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_3 = new QSpacerItem(440, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer_3);
+        horizontalLayout_3->addItem(horizontalSpacer_3);
 
-        MinWndBtn = new QPushButton(MainWnd);
+        MinWndBtn = new QPushButton(titleWidget);
         MinWndBtn->setObjectName(QStringLiteral("MinWndBtn"));
-        MinWndBtn->setMinimumSize(QSize(40, 20));
-        MinWndBtn->setMaximumSize(QSize(20, 10));
+        MinWndBtn->setMinimumSize(QSize(40, 40));
+        MinWndBtn->setMaximumSize(QSize(40, 40));
+        MinWndBtn->setCursor(QCursor(Qt::PointingHandCursor));
         MinWndBtn->setStyleSheet(QLatin1String("QPushButton{\n"
 "	image:url(:/image/2.png);\n"
 "}\n"
@@ -105,23 +121,25 @@ public:
 "	color:black;\n"
 "}"));
 
-        horizontalLayout->addWidget(MinWndBtn);
+        horizontalLayout_3->addWidget(MinWndBtn);
 
-        MaxWndBtn = new QPushButton(MainWnd);
+        MaxWndBtn = new QPushButton(titleWidget);
         MaxWndBtn->setObjectName(QStringLiteral("MaxWndBtn"));
-        MaxWndBtn->setMinimumSize(QSize(40, 20));
-        MaxWndBtn->setMaximumSize(QSize(20, 10));
+        MaxWndBtn->setMinimumSize(QSize(40, 40));
+        MaxWndBtn->setMaximumSize(QSize(40, 40));
+        MaxWndBtn->setCursor(QCursor(Qt::PointingHandCursor));
         MaxWndBtn->setStyleSheet(QLatin1String("QPushButton::hover{\n"
 "	background-color:#e5e5e5;\n"
 "	color:black;\n"
 "}"));
 
-        horizontalLayout->addWidget(MaxWndBtn);
+        horizontalLayout_3->addWidget(MaxWndBtn);
 
-        CloseWndBtn = new QPushButton(MainWnd);
+        CloseWndBtn = new QPushButton(titleWidget);
         CloseWndBtn->setObjectName(QStringLiteral("CloseWndBtn"));
-        CloseWndBtn->setMinimumSize(QSize(40, 20));
-        CloseWndBtn->setMaximumSize(QSize(20, 10));
+        CloseWndBtn->setMinimumSize(QSize(40, 40));
+        CloseWndBtn->setMaximumSize(QSize(40, 40));
+        CloseWndBtn->setCursor(QCursor(Qt::PointingHandCursor));
         CloseWndBtn->setStyleSheet(QLatin1String("QPushButton{\n"
 "	image:url(:/image/1.png);\n"
 "}\n"
@@ -129,31 +147,31 @@ public:
 "	background-color:red;\n"
 "}"));
 
-        horizontalLayout->addWidget(CloseWndBtn);
+        horizontalLayout_3->addWidget(CloseWndBtn);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout->addLayout(horizontalLayout_3);
 
         horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setSpacing(20);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        CPRWorkBtn = new QPushButton(MainWnd);
+        CPRWorkBtn = new QPushButton(titleWidget);
         CPRWorkBtn->setObjectName(QStringLiteral("CPRWorkBtn"));
-        CPRWorkBtn->setMinimumSize(QSize(0, 0));
+        CPRWorkBtn->setMinimumSize(QSize(80, 30));
         CPRWorkBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(CPRWorkBtn);
 
-        SCBtn = new QPushButton(MainWnd);
+        SCBtn = new QPushButton(titleWidget);
         SCBtn->setObjectName(QStringLiteral("SCBtn"));
-        SCBtn->setMinimumSize(QSize(0, 0));
+        SCBtn->setMinimumSize(QSize(80, 30));
         SCBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(SCBtn);
 
-        StatisticsBtn = new QPushButton(MainWnd);
+        StatisticsBtn = new QPushButton(titleWidget);
         StatisticsBtn->setObjectName(QStringLiteral("StatisticsBtn"));
-        StatisticsBtn->setMinimumSize(QSize(0, 0));
+        StatisticsBtn->setMinimumSize(QSize(60, 30));
         StatisticsBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(StatisticsBtn);
@@ -162,12 +180,11 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        horizontalLayout_2->setStretch(0, 1);
-        horizontalLayout_2->setStretch(1, 1);
-        horizontalLayout_2->setStretch(2, 1);
-        horizontalLayout_2->setStretch(3, 10);
 
         verticalLayout->addLayout(horizontalLayout_2);
+
+
+        gridLayout->addWidget(titleWidget, 0, 0, 1, 1);
 
         stackedWidget = new QStackedWidget(MainWnd);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
@@ -185,11 +202,8 @@ public:
         page_2->setObjectName(QStringLiteral("page_2"));
         stackedWidget->addWidget(page_2);
 
-        verticalLayout->addWidget(stackedWidget);
+        gridLayout->addWidget(stackedWidget, 1, 0, 1, 1);
 
-        verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(1, 2);
-        verticalLayout->setStretch(2, 40);
 
         retranslateUi(MainWnd);
 

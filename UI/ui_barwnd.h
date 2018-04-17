@@ -13,8 +13,11 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -22,17 +25,58 @@ QT_BEGIN_NAMESPACE
 class Ui_BarWnd
 {
 public:
-    QCommandLinkButton *commandLinkButton;
+    QVBoxLayout *verticalLayout;
+    QWidget *widget;
+    QGridLayout *gridLayout;
+    QLabel *label;
+    QHBoxLayout *horizontalLayout;
+    QWidget *widget_3;
+    QWidget *widget_2;
 
     void setupUi(QWidget *BarWnd)
     {
         if (BarWnd->objectName().isEmpty())
             BarWnd->setObjectName(QStringLiteral("BarWnd"));
-        BarWnd->resize(1151, 761);
-        BarWnd->setStyleSheet(QStringLiteral(""));
-        commandLinkButton = new QCommandLinkButton(BarWnd);
-        commandLinkButton->setObjectName(QStringLiteral("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(120, 200, 371, 271));
+        BarWnd->resize(1351, 733);
+        BarWnd->setStyleSheet(QStringLiteral("QWidget{border:1px solid #c0c0c0;}"));
+        verticalLayout = new QVBoxLayout(BarWnd);
+        verticalLayout->setSpacing(30);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(20, 16, 20, 40);
+        widget = new QWidget(BarWnd);
+        widget->setObjectName(QStringLiteral("widget"));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        label = new QLabel(widget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMaximumSize(QSize(16777215, 2));
+        label->setStyleSheet(QStringLiteral("border:1px solid #21b0f2;"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
+
+        verticalLayout->addWidget(widget);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        widget_3 = new QWidget(BarWnd);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+
+        horizontalLayout->addWidget(widget_3);
+
+        widget_2 = new QWidget(BarWnd);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+
+        horizontalLayout->addWidget(widget_2);
+
+        horizontalLayout->setStretch(0, 10);
+        horizontalLayout->setStretch(1, 2);
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        verticalLayout->setStretch(0, 2);
+        verticalLayout->setStretch(1, 10);
 
         retranslateUi(BarWnd);
 
@@ -42,7 +86,7 @@ public:
     void retranslateUi(QWidget *BarWnd)
     {
         BarWnd->setWindowTitle(QApplication::translate("BarWnd", "Form", Q_NULLPTR));
-        commandLinkButton->setText(QApplication::translate("BarWnd", "CommandLinkButton", Q_NULLPTR));
+        label->setText(QString());
     } // retranslateUi
 
 };

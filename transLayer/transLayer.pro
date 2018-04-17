@@ -10,12 +10,16 @@ DESTDIR += ../bin71
 TARGET = transLayer
 TEMPLATE = lib
 
+#DEFINES += _WINSOCK2API_
+DEFINES += WIN32_LEAN_AND_MEAN
 DEFINES += TRANSLAYER_LIBRARY
 DEFINES += BOOST_USE_LIB
 INCLUDEPATH += D:/Boost/boost_1_56_0
 
 #引入的lib文件，用于引入动态链接库
-LIBS += ws2_32.lib ..\bin71\common.lib
+#win32:CONFIG(debug, debug|release): LIBS += ws2_32.lib ..\bin71\common.lib ..\bin71\simulatorBase.lib
+#else:win32:CONFIG(release, debug|release): LIBS += ws2_32.lib ..\bin\common.lib ..\bin\simulatorBase.lib
+LIBS += ws2_32.lib ..\bin71\common.lib ..\bin71\simulatorBase.lib
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -51,3 +55,16 @@ unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_thread-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_thread-vc120-mt-gd-1_56
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_chrono-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_chrono-vc120-mt-gd-1_56
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_system-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_system-vc120-mt-gd-1_56
+
+INCLUDEPATH += D:/Boost/boost_1_56_0
+DEPENDPATH += D:/Boost/boost_1_56_0

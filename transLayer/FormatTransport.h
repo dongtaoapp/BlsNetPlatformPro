@@ -1,13 +1,13 @@
 #pragma once
 #include <list>
 #include <string>
+#include <boost/thread.hpp>
 #include ".\VirtualCommunicate.h"
 #include ".\FilterDown.h"
 #include ".\FilterUp.h"
 #include ".\TriggerJudgeGlobal.h"
 
 #include "..\Common\VirtualIrp.h"
-#include "..\common\criticalmutex.h"
 
 #include "..\SimulatorBase\ITransportOrderIrpToSimulator.h"
 #include "..\SimulatorBase\SimulatorOrderIrp.h"
@@ -24,29 +24,24 @@ namespace jysoft { namespace transLayer
 	public:
 		CFormatTransport( int nCommunicateVersion );
 		virtual ~CFormatTransport(void);
-	public:
-		HANDLE        m_hUp;
-		HANDLE        m_hDown;
-		HANDLE        m_hThreadOut;
-		HANDLE        m_hThrdFinish[2];
-		HANDLE        m_hTransportFinish; //上传到上一层结束
-        utility::CCriticalMutex   m_cUpMutex;
-        utility::CCriticalMutex   m_cDownMutex;
+	protected:
+		boost::condition_variable_any*       cond_IrpUp;
+		boost::condition_variable_any        cond_getDownIrp;
+		boost::mutex     muUpIrp;
+		boost::mutex     muDownIrp;
 		//向上位机转发的IRP缓冲链表
 		std::list<irp::CVirtualIrp *> m_lstUpIrps;
 		//向下位机转发的IRP缓冲链表
 		std::list<irp::CVirtualIrp *> m_lstDownIrps;
 	protected:
-		BOOL                    m_bInitialize;
+		bool                    m_bInitialize;
 		CFilterDown *           m_pFilterDown;
 		CFilterUp *             m_pFilterUp;
-		HANDLE*                 m_phHaveIrp;
 		ISimulateTriggerJudge*  m_pTriggerJudgeInterface; 
 		int                     m_nPaceDelayTime;                //起搏延迟计数
+		boost::thread_group     tgDownIrpThread;
 	public:
-		CFilterDown * GetFilterDownPtr();
-		inline HANDLE *GetTransportIrpHandlePtr() { return m_phHaveIrp;};
-		inline void SetReceivePackageIrpHandlePtr(HANDLE *pHandle) { m_phHaveIrp = pHandle; };
+		inline void SetReceivePackageIrpHandlePtr(boost::condition_variable_any *pHandle) { cond_IrpUp = pHandle; };
 		//重置事件处理
 		void ResetTransportHandle();
 	public: //基类函数重载
@@ -61,7 +56,7 @@ namespace jysoft { namespace transLayer
 		// 功能：  返回通信版本号
 		// 参数： 
 		// 返回值:  
-        virtual unsigned short GetCommunicateVersion() { return 0x00; };
+		virtual short GetCommunicateVersion() { return 0x00; };
 	public://接口ITransportOrderIrpToUp函数重载
 		//----------------------------------------------------------------------------------
 		// 函数名称： TranslateUpIrp
@@ -86,13 +81,13 @@ namespace jysoft { namespace transLayer
 		// 停止数据接收和发送线程
 		void StopTransportData(void);
 		//设置向上传数据的通信类
-        void SetUpCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber);
+		void SetUpCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber);
 		void RmvUpCommunicate(CVirtualCommunicate *pUpCommunicate);
 		//设置与CFilterUp连通的通信链路
-        void SetFilterUpLinkCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber, bool bRmvCurrCommunicate = true);
+		void SetFilterUpLinkCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber, bool bRmvCurrCommunicate = true);
 		void RmvFilterUpLinkCommunicate(CVirtualCommunicate *pUpCommunicate);
 		//设置与CFilterDown连通的通信链路
-        void SetFilterDownLinkCommunicates(CVirtualCommunicate *pDownCommunicates[], short uNumber, bool bRmvCurrCommunicate = true);
+		void SetFilterDownLinkCommunicates(CVirtualCommunicate *pDownCommunicates[], short uNumber, bool bRmvCurrCommunicate = true);
 		void RmvFilterDownLinkCommunicates(CVirtualCommunicate *pDownCommunicate);
 		//向下传输Irp
 		void TranslateDownIrp(CVirtualCommunicate *pSrcCommunicate, irp::CVirtualIrp * pDownIrp);
@@ -104,8 +99,12 @@ namespace jysoft { namespace transLayer
 		void RmvStandantCommunicate(CVirtualCommunicate * pCommCommunicatePtr);
 	public:
 		//过滤向上发送的Irp
-		BOOL OnFilterTransUpIrp(irp::CVirtualIrp *pTransUpIrp);
+		bool OnFilterTransUpIrp(irp::CVirtualIrp *pTransUpIrp);
 		//减少过滤计数时间
 		void DecreaseFilterTransUpIrpTime(short  sSecond);
+		bool isTransInDownIrps() { return (m_bInitialize && m_lstDownIrps.size() > 0) ? true : false;};
+		bool isTransUpIrps();
+	private:
+		void ThrdTransDownIrpFunc();
 	};
 }}

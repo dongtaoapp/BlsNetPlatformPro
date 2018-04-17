@@ -15,6 +15,7 @@ DEFINES += BOOST_USE_LIB
 INCLUDEPATH += D:/Boost/boost_1_56_0
 
 #引入的lib文件，用于引入动态链接库
+LIBS+= -lquartz  -lole32  -lGdiplus
 LIBS += ..\bin71\common.lib  ..\bin71\elementParse.lib
 
 # The following define makes your compiler emit warnings if you use
@@ -76,7 +77,13 @@ SOURCES += SimulateBaseGlobal.cpp \
     SymptomsShowInterfacesAggregate.cpp \
     ITransportOrderIrpToSimulator.cpp \
     VirCardiogramParam.cpp \
-    WatchBarsShowInterfacesAggregate.cpp
+    WatchBarsShowInterfacesAggregate.cpp \
+    WCD.cpp \
+    VirCardiogramParaFactory.cpp \
+    Sample.cpp \
+    CardiogramCoordinate.cpp \
+    CardiogramUCD.cpp \
+    RealTimeDataIrp.cpp
 
 HEADERS +=\
         simulatorbase_global.h \
@@ -128,7 +135,13 @@ HEADERS +=\
     SymptomsShowInterfacesAggregate.h \
     ITransportOrderIrpToSimulator.h \
     VirCardiogramParam.h \
-    WatchBarsShowInterfacesAggregate.h
+    WatchBarsShowInterfacesAggregate.h \
+    WCD.h \
+    VirCardiogramParaFactory.h \
+    Sample.h \
+    CardiogramCoordinate.h \
+    CardiogramUCD.h \
+    RealTimeDataIrp.h
 
 unix {
     target.path = /usr/lib
@@ -141,3 +154,17 @@ else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/pugixml-1.8/vc14_x86
 INCLUDEPATH += D:/Boost/pugixml-1.8/src
 DEPENDPATH += D:/Boost/pugixml-1.8/src
 
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_locale-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_locale-vc120-mt-gd-1_56
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_thread-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_thread-vc120-mt-gd-1_56
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_system-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_system-vc120-mt-gd-1_56
+
+win32:CONFIG(release, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_chrono-vc120-mt-1_56
+else:win32:CONFIG(debug, debug|release): LIBS += -LD:/Boost/boost_1_56_0/vc12_x86/lib/ -llibboost_chrono-vc120-mt-gd-1_56
+
+INCLUDEPATH += D:/Boost/boost_1_56_0
+DEPENDPATH += D:/Boost/boost_1_56_0

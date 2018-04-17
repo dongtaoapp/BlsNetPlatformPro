@@ -83,7 +83,7 @@ namespace jysoft { namespace simulator {
 		CVirCardiogramParam *           m_pEcgLeadParam[9];
 		BasicRhythm                     m_eBasicRhythm;
 	protected:
-        //IStorage *                      m_pI12LeadsStorage;
+		IStorage *                      m_pI12LeadsStorage;
 	};
 
 }}

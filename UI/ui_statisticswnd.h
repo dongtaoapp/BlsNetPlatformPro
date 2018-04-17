@@ -55,11 +55,14 @@ public:
     {
         if (StatisticsWnd->objectName().isEmpty())
             StatisticsWnd->setObjectName(QStringLiteral("StatisticsWnd"));
-        StatisticsWnd->resize(1455, 800);
+        StatisticsWnd->resize(999, 749);
         StatisticsWnd->setStyleSheet(QStringLiteral(""));
         verticalLayout_2 = new QVBoxLayout(StatisticsWnd);
+        verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(20);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         PrintBtn = new QPushButton(StatisticsWnd);
         PrintBtn->setObjectName(QStringLiteral("PrintBtn"));
@@ -121,8 +124,10 @@ public:
         verticalLayout_2->addLayout(horizontalLayout);
 
         horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         InfoLa = new QLabel(StatisticsWnd);
         InfoLa->setObjectName(QStringLiteral("InfoLa"));
@@ -240,6 +245,9 @@ public:
         verticalLayout_2->setStretch(1, 10);
 
         retranslateUi(StatisticsWnd);
+
+        stackedWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(StatisticsWnd);
     } // setupUi

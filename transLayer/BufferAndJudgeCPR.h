@@ -1,11 +1,11 @@
 #pragma once
 #include <list>
-#include ".\transLayer_global.h"
+#include <boost/thread.hpp>
+#include ".\translayer_global.h"
 
 #include "..\common\CommonGlobal.h"
-#include "..\common\criticalMutex.h"
 
-#define _UINT     unsigned int
+#define _short     unsigned int
 
 namespace jysoft { namespace transLayer 
 {
@@ -18,7 +18,7 @@ namespace jysoft { namespace transLayer
 		public:
 			int   m_nSrcTime;
 			int   m_nRemainTime;
-			_UINT   m_uIDEvent;
+			_short   m_uIDEvent;
 		private:
 			bool  m_bValidateEvent;    //是否是有效的计算器
 		public:
@@ -28,7 +28,7 @@ namespace jysoft { namespace transLayer
 				m_uIDEvent  = 0;
 				m_nSrcTime = m_nRemainTime = -1;
 			};
-			_TimeEventStruct(UINT uIDEvent, int iTime)
+			_TimeEventStruct(short uIDEvent, int iTime)
 			{
 				m_bValidateEvent = true;
 				m_uIDEvent = uIDEvent;
@@ -44,10 +44,10 @@ namespace jysoft { namespace transLayer
 	public://主要的函数
 		//过了nTime时间后触发此函数
 		void  lapseTimerHandle(int nTime);
-		_UINT  setTimer(_UINT uIDEvent, int nTime);
-		void  OnTimer(_UINT nIDEvent);
+		_short  setTimer(_short uIDEvent, int nTime);
+		void  OnTimer(_short nIDEvent);
 		//删除时间事件
-		void  killTimer(_UINT nIDEvent);
+		void  killTimer(_short nIDEvent);
 		//加入新的CPR数据
 		void  loadCPRNewData(const _CPRData &cprValue);
 		//重置
@@ -57,16 +57,16 @@ namespace jysoft { namespace transLayer
 	protected:
 		std::list<_TimeEventStruct *> m_lstTimeEvents;
 		int           m_iDelayTime;
-		_UINT          m_uBuffTimeEvent;//缓冲时间
-		_UINT          m_uStartCPR;     //是否开始CPR
+		_short          m_uBuffTimeEvent;//缓冲时间
+		_short          m_uStartCPR;     //是否开始CPR
 		_CPRData      m_dwCPRData;
 		int           m_iEqualTime;
 		//-----------------------------------------------------------
 		CVirtualCommunicate *m_pCommCommunicate;
 		std::list<_CPRData>   m_cLoopBuff;
 	protected:
-        utility::CCriticalMutex        m_cMutex;
-        utility::CCriticalMutex        m_cTimeEventMutex;
+		boost::mutex   muBufferData;
+		boost::mutex   muTimeEvent;
 	};
 }}
 

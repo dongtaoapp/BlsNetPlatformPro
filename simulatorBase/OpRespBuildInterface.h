@@ -1,9 +1,9 @@
 #pragma once
+#include <boost/thread.hpp>
 #include ".\SyncPnpFacilities.h"
 #include ".\IGetPhysioloySimulateData.h"
 #include ".\ShowRespRateUpdateInterface.h"
 
-#include "..\common\criticalMutex.h"
 #include "..\common\opinterfacevir.h"
 #include "..\Common\CommonGlobal.h"
 
@@ -17,7 +17,7 @@ namespace jysoft { namespace simulator { namespace base {
 		virtual ~COpRespBuildInterface(void);
 	protected:
 		CShowRespRateUpdateInterface          *m_pShowRespUpdate;
-        utility::CCriticalMutex                m_cInterfaceMutex;
+		boost::mutex                      m_cInterfaceMutex;
 	private:
 		pnp::CSyncPnpFacilities *                   m_pSyncPnPFacilities;
 	public:

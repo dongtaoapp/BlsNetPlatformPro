@@ -25,7 +25,7 @@ namespace jysoft { namespace transLayer
 
 	CBufferAndJudgeCPR::~CBufferAndJudgeCPR(void)
 	{
-        foreach( auto x, m_lstTimeEvents )
+		BOOST_FOREACH( auto x, m_lstTimeEvents )
 		{
 			delete x;
 		}
@@ -59,9 +59,10 @@ namespace jysoft { namespace transLayer
 				m_iEqualTime = 0;
 			}
 		}
-		m_cMutex.Lock();
-		m_cLoopBuff.push_back(cprValue);
-		m_cMutex.Unlock();
+		{
+			boost::mutex::scoped_lock  lock(muBufferData);
+			m_cLoopBuff.push_back(cprValue);
+		}
 
 		if(m_uStartCPR == 0 && m_uBuffTimeEvent == 0)
 		{
@@ -72,12 +73,12 @@ namespace jysoft { namespace transLayer
 	//过了nTime时间后触发此函数
 	void  CBufferAndJudgeCPR::lapseTimerHandle(int nTime)
 	{
-		m_cTimeEventMutex.Lock();
-        foreach( auto pTimeEvent, m_lstTimeEvents )
+		muTimeEvent.lock();
+		BOOST_FOREACH( auto pTimeEvent, m_lstTimeEvents )
 		{
 			pTimeEvent->m_nRemainTime -= nTime;
 		}
-		m_cTimeEventMutex.Unlock();
+		muTimeEvent.unlock();
 		std::list<_TimeEventStruct *>::iterator pos = m_lstTimeEvents.begin();
 		for( ; pos != m_lstTimeEvents.end(); ++pos)
 		{
@@ -91,7 +92,7 @@ namespace jysoft { namespace transLayer
 		}
 	}
 
-	void  CBufferAndJudgeCPR::OnTimer(_UINT nIDEvent)
+	void  CBufferAndJudgeCPR::OnTimer(_short nIDEvent)
 	{
 		const cpr::CParseCPRData_Singleton &cCPRParse = cpr::CParseCPRData_Singleton::get_const_instance();
 		if(nIDEvent == 1)
@@ -108,7 +109,7 @@ namespace jysoft { namespace transLayer
 				{
 					_CPRData cCPRData[2];;
 					int dwActiveSize = 1;
-					m_cMutex.Lock();
+					muBufferData.lock();
 					if(m_cLoopBuff.size() == 0)
 						dwActiveSize = 0;
 					else
@@ -122,7 +123,7 @@ namespace jysoft { namespace transLayer
 							dwActiveSize = 2;
 						}
 					}
-					m_cMutex.Unlock();
+					muBufferData.unlock();
 					if((m_iDelayTime >= 70 || m_iEqualTime >= 70)&& m_uStartCPR != 0)
 					{
 						//CPR结束
@@ -134,7 +135,7 @@ namespace jysoft { namespace transLayer
 						cCPRData[0] = cCPRParse.createCPRPhaseData(false);
 						dwActiveSize = 1;
 					}
-                    if(dwActiveSize != 0)
+					if(dwActiveSize != 0)
 					{
 						//发送数据
 						m_pCommCommunicate->TransUpCPRDataFromBuffer( cCPRData, dwActiveSize );
@@ -163,19 +164,18 @@ namespace jysoft { namespace transLayer
 		}
 	}
 
-	_UINT  CBufferAndJudgeCPR::setTimer(_UINT uIDEvent, int nTime)
+	_short  CBufferAndJudgeCPR::setTimer(_short uIDEvent, int nTime)
 	{
-		m_cTimeEventMutex.Lock();
+		boost::mutex::scoped_lock  lock(muTimeEvent);
 		_TimeEventStruct *pNewTimeEvent  = new _TimeEventStruct(uIDEvent, nTime);
 		m_lstTimeEvents.push_back(pNewTimeEvent);
-		m_cTimeEventMutex.Unlock();
 		return uIDEvent;
 	}
 
 	//删除时间事件
-	void  CBufferAndJudgeCPR::killTimer(_UINT nIDEvent)
+	void  CBufferAndJudgeCPR::killTimer(_short nIDEvent)
 	{
-		m_cTimeEventMutex.Lock();
+		boost::mutex::scoped_lock  lock(muTimeEvent);
 		std::list<_TimeEventStruct *>::iterator iter;
 		iter = find_if(m_lstTimeEvents.begin(), m_lstTimeEvents.end(), bind(&_TimeEventStruct::m_uIDEvent, _1) == nIDEvent);
 		if( iter != m_lstTimeEvents.end() )
@@ -183,7 +183,6 @@ namespace jysoft { namespace transLayer
 			delete (*iter);
 			m_lstTimeEvents.erase( iter );
 		}
-		m_cTimeEventMutex.Unlock();
 	}	
 
 	//重置

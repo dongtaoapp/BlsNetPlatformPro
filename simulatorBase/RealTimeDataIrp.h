@@ -1,4 +1,6 @@
 #pragma once
+#include ".\simulatorbase_global.h"
+
 #include "..\Common\CommonGlobal.h"
 #include "..\Common\VirtualIrp.h"
 
@@ -10,7 +12,7 @@ namespace jysoft { namespace irp {
 	创建人：	 hjg
 	创建时间：   2017/2/8
 	//-----------------------------------------------------------------------------------------------------------------*/
-	class AFX_EXT_CLASS CRealTimeDataIrp : public CVirtualIrp
+    class SIMULATORBASESHARED_EXPORT CRealTimeDataIrp : public CVirtualIrp
 	{
 	public:
 		CRealTimeDataIrp(void);
@@ -40,7 +42,7 @@ namespace jysoft { namespace irp {
 		//        const char *lpstrPackage：
 		//        UINT uNumber：
 		// 返回值:  
-		static CRealTimeDataIrp * UnzipPackage(const char *lpstrPackage, UINT uNumber);
+        static CRealTimeDataIrp * UnzipPackage(const char *lpstrPackage, short uNumber);
 	public:
 		//设置CPR实时采样数据
 		void SetCPR_RealTimeData(/*in*/const _CPRData *ptrCPRDatas, int nLength);

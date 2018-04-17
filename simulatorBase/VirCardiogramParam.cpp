@@ -1,6 +1,8 @@
 #include <boost/lexical_cast.hpp>
 #include ".\VirCardiogramParam.h"
 
+#include "..\common\EncodeConv.h"
+
 namespace jysoft { namespace simulator { 
 
 	CVirCardiogramParam::CVirCardiogramParam(void)
@@ -11,15 +13,15 @@ namespace jysoft { namespace simulator {
 		m_eExtrasys = ES_None;
 		m_uHR     = 0;
 		//------------------------------------------------------------
-        //m_pStorages = NULL;
+        m_pStorages = NULL;
 	}
 
 	CVirCardiogramParam::~CVirCardiogramParam(void)
 	{
-        //if(m_pStorages != NULL)
-        //{
-        //	m_pStorages->Release();
-        //}
+        if(m_pStorages != NULL)
+        {
+            m_pStorages->Release();
+        }
 	}
 
 	bool CVirCardiogramParam::GetParamValue(const std::string &strKey, std::string &strValue)
@@ -62,27 +64,27 @@ namespace jysoft { namespace simulator {
 	}
 
 	//返回配置文件的流文件
-    //LPSTREAM CVirCardiogramParam::GetMakefileStream()
-    //{
-    //	LPSTREAM lpStream = NULL;
-    //	if( m_pStorages )
-    //	{
-    //		m_pStorages->OpenStream(L"MakeFile.txt",NULL,STGM_READ|STGM_SHARE_EXCLUSIVE,0,&lpStream);
-    //	}
-    //	return lpStream;
-    //}
+    LPSTREAM CVirCardiogramParam::GetMakefileStream()
+    {
+        LPSTREAM lpStream = NULL;
+        if( m_pStorages )
+        {
+            m_pStorages->OpenStream(L"MakeFile.txt",NULL,STGM_READ|STGM_SHARE_EXCLUSIVE,0,&lpStream);
+        }
+        return lpStream;
+    }
 
 	//返回流文件
-    //LPSTREAM CVirCardiogramParam::GetFileStream(const std::string &strFileName)
-    //{
-    //	USES_CONVERSION;
-    //	LPSTREAM lpStream = NULL;
-    //	if( m_pStorages )
-    //	{
-    //		m_pStorages->OpenStream(T2COLE(strFileName.c_str()),NULL,STGM_READ|STGM_SHARE_EXCLUSIVE,0,&lpStream);
-    //	}
-    //	return lpStream;
-    //}
+    LPSTREAM CVirCardiogramParam::GetFileStream(const std::string &strFileName)
+    {
+        USES_CONVERSION;
+        LPSTREAM lpStream = NULL;
+        if( m_pStorages )
+        {
+            m_pStorages->OpenStream(s2w(strFileName).c_str(),NULL,STGM_READ|STGM_SHARE_EXCLUSIVE,0,&lpStream);
+        }
+        return lpStream;
+    }
 
 	//返回是否有心脏搏动信号
 	bool  CVirCardiogramParam::isHaveHeartStartSign()

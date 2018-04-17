@@ -28,7 +28,7 @@ namespace jysoft { namespace transLayer {
 		// 功能：  返回通信版本
 		// 参数： 
 		// 返回值:  
-        virtual unsigned short GetCommunicateVersion() = 0;
+		virtual short GetCommunicateVersion() = 0;
 	};
 
 	/*-------------------------------------------------------------------------------------------------------------------

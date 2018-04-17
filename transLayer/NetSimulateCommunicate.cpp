@@ -8,48 +8,12 @@
 #include "..\simulatorBase\EventIrp_SimulateTrigger.h"
 
 
-//=======================线程函数======================================
-//时钟线程
-unsigned long WINAPI ThrdMicroSecondTimeFunc(LPVOID lpVoid)
-{
-	jysoft::transLayer::CNetSimulateCommunicate *pPtrComm = (jysoft::transLayer::CNetSimulateCommunicate *)lpVoid;
-	HANDLE  pHandles[2];
-	pHandles[0] = pPtrComm->m_hPause;
-	pHandles[1] = pPtrComm->m_hThrdOut;
-	while(1)
-	{
-        unsigned long dwRtn = ::WaitForMultipleObjects(2,pHandles,false,INFINITE);
-		if(dwRtn == WAIT_OBJECT_0+1)
-		{
-			break;
-		}
-		dwRtn  = ::WaitForSingleObject(pPtrComm->m_hThrdOut,70);
-		switch(dwRtn)
-		{
-		case WAIT_TIMEOUT:
-			{
-				pPtrComm->OnTime(70);
-				break;
-			}
-		default:
-			{//退出
-				::SetEvent(pPtrComm->m_hThrdFinish);
-				return 0;
-			}
-		}
-	}
-	::SetEvent(pPtrComm->m_hThrdFinish);
-	return 0;
-}
-
 namespace jysoft { namespace transLayer 
 {
 	CNetSimulateCommunicate::CNetSimulateCommunicate(network::CNetTransferVir *pVirNetTransfer) : CVirtualCommunicate()
 		, m_cBufferAndJudgeCPR( this )
 	{
-		m_hThrdOut = NULL;
-		m_hThrdFinish = NULL;
-		m_hPause   = NULL;
+		m_pMicrosecTimer = NULL;
 		m_pTriggerJudgeInterface = NULL;
 		m_pVirNetTransferPtr  = pVirNetTransfer;
 		m_bTcpEstablishSec    = false;
@@ -57,15 +21,16 @@ namespace jysoft { namespace transLayer
 	
 	CNetSimulateCommunicate::~CNetSimulateCommunicate(void)
 	{
-		::SetEvent(m_hThrdOut);
-		if( m_hThrdFinish != NULL)
-			::WaitForSingleObject(m_hThrdFinish, INFINITE);
-		CloseHandle(m_hThrdOut);
-		m_hThrdOut    = NULL;
-		CloseHandle(m_hThrdFinish);
-		m_hThrdFinish = NULL;
-		CloseHandle(m_hPause);
-		m_hPause    = NULL;
+		if( m_pMicrosecTimer != NULL )
+		{
+			m_pMicrosecTimer->killTimer();
+			delete m_pMicrosecTimer;
+		}
+		m_pMicrosecTimer = NULL;
+		if(m_pVirNetTransferPtr != NULL)
+		{
+			m_pVirNetTransferPtr->RemoveRecevNetDataOp(this);
+		}
 		m_pTriggerJudgeInterface = NULL;
 	}
 
@@ -75,25 +40,22 @@ namespace jysoft { namespace transLayer
 		m_pTriggerJudgeInterface  = pJudgeInterface;
 	}
 
-	void CNetSimulateCommunicate::OnTime(int nMicroSecond)
+	void CNetSimulateCommunicate::OnTime()
 	{
-		m_cBufferAndJudgeCPR.lapseTimerHandle(nMicroSecond);
+		m_cBufferAndJudgeCPR.lapseTimerHandle(100);
 	}
 
 	// 初始化通信接口，使其能正常的收发数据
 	bool CNetSimulateCommunicate::InitializeCommunicate(void)
 	{
-		if(m_hThrdOut != NULL)
-			CloseHandle(m_hThrdOut);
-		m_hThrdOut = ::CreateEvent(NULL,true,false,NULL);
-		if(m_hThrdFinish != NULL)
-			CloseHandle(m_hThrdFinish);
-		m_hThrdFinish = ::CreateEvent(NULL,true,false,NULL);
-		if(m_hPause != NULL)
-			CloseHandle(m_hPause);
-		m_hPause = ::CreateEvent(NULL,true,true,NULL);
-		//=======创建线程==============
-		::AfxBeginThread((AFX_THREADPROC)ThrdMicroSecondTimeFunc,(LPVOID)this,THREAD_PRIORITY_ABOVE_NORMAL);
+		if(m_pVirNetTransferPtr != NULL)
+		{
+			m_pVirNetTransferPtr->AddRecvNetDataOp(this);
+		}
+		if( m_pMicrosecTimer == NULL )
+		{
+			m_pMicrosecTimer = new utility::CEmulateTimer(100, boost::bind(&CNetSimulateCommunicate::OnTime, this));
+		}
 		return true;
 	}
 
@@ -123,7 +85,7 @@ namespace jysoft { namespace transLayer
 	}
 
 	//数据传到程序中
-    void CNetSimulateCommunicate::TransUpData(void *lpData, short uNumber)
+	void CNetSimulateCommunicate::TransUpData(void *lpData, short uNumber)
 	{
 		if( m_pTriggerJudgeInterface != NULL )
 		{
@@ -214,7 +176,7 @@ namespace jysoft { namespace transLayer
 		}*/
 	}
 
-    void CNetSimulateCommunicate::SendData(void *lpByte, short uSize)
+	void CNetSimulateCommunicate::SendData(void *lpByte, short uSize)
 	{
 		if( m_pVirNetTransferPtr != NULL && m_bTcpEstablishSec )
 		{
@@ -225,7 +187,10 @@ namespace jysoft { namespace transLayer
 	//开始CPR数据模拟
 	void CNetSimulateCommunicate::StartCPRSimulate()
 	{
-		::SetEvent(m_hPause);
+		if( m_pMicrosecTimer != NULL )
+		{
+			m_pMicrosecTimer->startTimer();
+		}
 	}
 
 	//重置CPR缓冲及判断

@@ -27,7 +27,7 @@ public:
     QLabel *TitleLa;
     QPushButton *closeBtn;
     QLabel *la;
-    QLineEdit *lineEdit;
+    QLineEdit *addManikinlineEdit;
     QPushButton *cancelBtn;
     QPushButton *okBtn;
 
@@ -52,10 +52,11 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #21b0f2;\n"
-"background-color: #373950;"));
+"background-color: #232639;"));
         closeBtn = new QPushButton(CPRAddManikinWnd);
         closeBtn->setObjectName(QStringLiteral("closeBtn"));
         closeBtn->setGeometry(QRect(794, 12, 41, 41));
+        closeBtn->setCursor(QCursor(Qt::PointingHandCursor));
         closeBtn->setStyleSheet(QLatin1String("border-style:solid;\n"
 "image:url(:/image/X.png);"));
         la = new QLabel(CPRAddManikinWnd);
@@ -66,10 +67,10 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #b6b8c4;"));
-        lineEdit = new QLineEdit(CPRAddManikinWnd);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(90, 210, 467, 37));
-        lineEdit->setStyleSheet(QLatin1String("font-family: PingFangSC-Regular;\n"
+        addManikinlineEdit = new QLineEdit(CPRAddManikinWnd);
+        addManikinlineEdit->setObjectName(QStringLiteral("addManikinlineEdit"));
+        addManikinlineEdit->setGeometry(QRect(90, 210, 467, 37));
+        addManikinlineEdit->setStyleSheet(QLatin1String("font-family: PingFangSC-Regular;\n"
 "font-size: 20px;\n"
 "font-weight: normal;\n"
 "line-height: 70px;\n"
@@ -77,9 +78,11 @@ public:
         cancelBtn = new QPushButton(CPRAddManikinWnd);
         cancelBtn->setObjectName(QStringLiteral("cancelBtn"));
         cancelBtn->setGeometry(QRect(180, 430, 81, 31));
+        cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
         okBtn = new QPushButton(CPRAddManikinWnd);
         okBtn->setObjectName(QStringLiteral("okBtn"));
         okBtn->setGeometry(QRect(390, 430, 91, 31));
+        okBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
         retranslateUi(CPRAddManikinWnd);
 

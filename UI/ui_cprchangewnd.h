@@ -68,7 +68,7 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #21b0f2;\n"
-"background-color: #373950;"));
+"background-color:#232639;;"));
         closeBtn = new QPushButton(CPRChangeWnd);
         closeBtn->setObjectName(QStringLiteral("closeBtn"));
         closeBtn->setGeometry(QRect(784, 12, 51, 41));

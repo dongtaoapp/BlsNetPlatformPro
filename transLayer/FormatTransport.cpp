@@ -9,101 +9,38 @@
 using namespace jysoft::irp;
 namespace jysoft { namespace transLayer 
 {
-	//============================================================================
-	//线程函数
-	UINT WINAPI ThrdTransUpIrpFunc(LPVOID lpVoid)
+	void CFormatTransport::ThrdTransDownIrpFunc()
 	{
-		CFormatTransport *pFormatTranspt = (CFormatTransport *)lpVoid;
-		::ResetEvent(pFormatTranspt->m_hThrdFinish[0]);
-		HANDLE  phEvents[2];
-		phEvents[0] = pFormatTranspt->m_hThreadOut;
-		phEvents[1] = pFormatTranspt->m_hUp;
-		while(1)
+		try
 		{
-            unsigned long dwRtn = ::WaitForMultipleObjects(2,phEvents,false,INFINITE);
-			switch(dwRtn)
+			while(1)
 			{
-			case WAIT_OBJECT_0:
+				CVirtualIrp *pIrp = NULL;
 				{
-					::SetEvent(pFormatTranspt->m_hThrdFinish[0]);
-					return 0;
+					boost::mutex::scoped_lock lock(muDownIrp);
+					cond_getDownIrp.wait(lock, boost::bind(&CFormatTransport::isTransInDownIrps, this));
+					//先进先出处理接收包, 获取第一个包
+					pIrp = *m_lstDownIrps.begin();
+					m_lstDownIrps.pop_front();
 				}
-			case WAIT_OBJECT_0 + 1:
-				{
-					::SetEvent(*pFormatTranspt->GetTransportIrpHandlePtr());
-					HANDLE phTransport[2];
-					phTransport[0] = pFormatTranspt->m_hThreadOut;
-					phTransport[1] = pFormatTranspt->m_hTransportFinish;//传输结束标志事件
-					DWORD dwRtn1 = ::WaitForMultipleObjects(2,phTransport,false,200);
-					switch(dwRtn1)
-					{
-					case WAIT_OBJECT_0:
-						{
-							::SetEvent(pFormatTranspt->m_hThrdFinish[0]);
-							return 0;
-						}
-					default:
-						{
-							::ResetEvent(pFormatTranspt->m_hTransportFinish);
-							if(pFormatTranspt->m_lstUpIrps.size() == 0)
-								::ResetEvent(pFormatTranspt->m_hUp);
-							break;
-						}
-					}
-					break;
-				}
+				boost::this_thread::interruption_point();
+				m_pFilterDown->TransportIrp(NULL,pIrp);
+				delete pIrp;
 			}
 		}
-		return 0;
-	}
-
-	UINT WINAPI ThrdTransDownIrpFunc(LPVOID lpVoid)
-	{
-		CFormatTransport *pFormatTranspt = (CFormatTransport *)lpVoid;
-		::ResetEvent(pFormatTranspt->m_hThrdFinish[1]);
-		HANDLE  phEvents[2];
-		phEvents[0] = pFormatTranspt->m_hThreadOut;
-		phEvents[1] = pFormatTranspt->m_hDown;
-		while(1)
+		catch (boost::thread_interrupted &)
 		{
-            unsigned long dwRtn = ::WaitForMultipleObjects(2,phEvents,false,INFINITE);
-			switch(dwRtn)
-			{
-			case WAIT_OBJECT_0:
-				{
-					::SetEvent(pFormatTranspt->m_hThrdFinish[1]);
-					return 0;
-				}
-			case WAIT_OBJECT_0 + 1:
-				{
-					pFormatTranspt->m_cDownMutex.Lock();
-					CVirtualIrp *pIrp = *pFormatTranspt->m_lstDownIrps.begin();
-					pFormatTranspt->m_lstDownIrps.pop_front();
-					if(pFormatTranspt->m_lstDownIrps.size() == 0)
-						::ResetEvent(pFormatTranspt->m_hDown);
-					pFormatTranspt->GetFilterDownPtr()->TransportIrp(NULL,pIrp);
-					delete pIrp;
-					pFormatTranspt->m_cDownMutex.Unlock();
-					break;
-				}
-			}
+			;
 		}
-		return 0;
 	}
 	//============================================================================
 	CFormatTransport::CFormatTransport( int nCommunicateVersion )
 	{
-		m_phHaveIrp = NULL;
+		cond_IrpUp = NULL;
 		m_pFilterDown   = new CFilterDown();
 		m_pFilterUp     = new CFilterUp( this );
 		//------------------------------------------------
-		m_hUp = ::CreateEvent(NULL,true,false,NULL);;
-		m_hDown = ::CreateEvent(NULL,true,false,NULL);;
-		m_hThreadOut = ::CreateEvent(NULL,true,false,NULL);
-		m_hThrdFinish[0] = ::CreateEvent(NULL,true,true,NULL);;
-		m_hThrdFinish[1] = ::CreateEvent(NULL,true,true,NULL);;
-		m_hTransportFinish = ::CreateEvent(NULL,true,false,NULL);
-		m_bInitialize = FALSE;
+		m_bInitialize = false;
 		//默认为V1.0版本通信协议
 		m_pTriggerJudgeInterface  = new CBlsTriggerJudgeVersion();
 
@@ -121,11 +58,15 @@ namespace jysoft { namespace transLayer
 		delete m_pFilterUp;
 	}
 
-	CFilterDown * CFormatTransport::GetFilterDownPtr()
+	bool CFormatTransport::isTransUpIrps()
 	{
-		return m_pFilterDown;
+		boost::mutex::scoped_lock  lock(muUpIrp);
+		if( m_bInitialize && m_lstUpIrps.size() > 0 )
+		{
+			return true;
+		}
+		return false;
 	}
-
 
 	// 构建数据接收和发送线程
 	void CFormatTransport::StartTransportData(void)
@@ -136,11 +77,9 @@ namespace jysoft { namespace transLayer
 			{
 				m_pFilterDown  = new CFilterDown();
 			}
-			m_pFilterDown->StartFilterDownTransFuncThread();
 			//=======创建线程==============
-			::AfxBeginThread((AFX_THREADPROC)ThrdTransUpIrpFunc,(LPVOID)this,THREAD_PRIORITY_ABOVE_NORMAL);
-			::AfxBeginThread((AFX_THREADPROC)ThrdTransDownIrpFunc,(LPVOID)this,THREAD_PRIORITY_ABOVE_NORMAL);
-			m_bInitialize = TRUE;
+			tgDownIrpThread.create_thread( boost::bind(&CFormatTransport::ThrdTransDownIrpFunc, this));
+			m_bInitialize = true;
 
 			m_nPaceDelayTime          = -1;
 		}
@@ -151,13 +90,9 @@ namespace jysoft { namespace transLayer
 	{
 		if( m_bInitialize )
 		{
-			::SetEvent(m_hThreadOut);
-			::WaitForMultipleObjects(2,m_hThrdFinish,true,INFINITE);
-			CloseHandle(m_hThrdFinish[0]);
-			CloseHandle(m_hThrdFinish[1]);
-			CloseHandle(m_hUp);
-			CloseHandle(m_hDown);
-			CloseHandle(m_hThreadOut);
+			m_bInitialize = false;
+			tgDownIrpThread.interrupt_all();
+			tgDownIrpThread.join_all();
 			BOOST_FOREACH(auto x, m_lstUpIrps)
 			{
 				delete x;
@@ -168,7 +103,6 @@ namespace jysoft { namespace transLayer
 				delete x;
 			}
 			m_lstDownIrps.clear();
-			m_bInitialize = false;
 			delete m_pFilterDown;
 			m_pFilterDown  = NULL;
 		}
@@ -178,10 +112,10 @@ namespace jysoft { namespace transLayer
 	// Description     : 设置向上位机发送数据的所有方式(方式包括：串口，网络)
 	// Return type     : 无
 	// Argument        : CVirtualCommunicate *pUpCommunicates[]
-	// Argument        : UINT uNumber
-    void CFormatTransport::SetUpCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber)
+	// Argument        : short uNumber
+	void CFormatTransport::SetUpCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber)
 	{
-		for(UINT i = 0; i<uNumber; ++i)
+		for(short i = 0; i<uNumber; ++i)
 		{
 			pUpCommunicates[i]->SetFilterUpPtr(m_pFilterUp);
 			//----------------------------------------------------------
@@ -199,7 +133,7 @@ namespace jysoft { namespace transLayer
 	}
 
 	//设置与CFilterUp连通的通信链路
-    void CFormatTransport::SetFilterUpLinkCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber, bool bRmvCurrCommunicate /*=true*/)
+	void CFormatTransport::SetFilterUpLinkCommunicates(CVirtualCommunicate *pUpCommunicates[], short uNumber, bool bRmvCurrCommunicate /*=true*/)
 	{
 		m_pFilterUp->SetFilterUpLinkCommunicates(pUpCommunicates,uNumber,bRmvCurrCommunicate);
 	}
@@ -209,7 +143,7 @@ namespace jysoft { namespace transLayer
 		m_pFilterUp->RmvFilterUpLinkCommunicate(pUpCommunicate);
 	}
 	//设置与CFilterDown连通的通信链路
-    void CFormatTransport::SetFilterDownLinkCommunicates(CVirtualCommunicate *pDownCommunicates[], short uNumber, bool bRmvCurrCommunicate/*=true*/)
+	void CFormatTransport::SetFilterDownLinkCommunicates(CVirtualCommunicate *pDownCommunicates[], short uNumber, bool bRmvCurrCommunicate/*=true*/)
 	{
 		if( m_pFilterDown != NULL )
 		{
@@ -231,10 +165,12 @@ namespace jysoft { namespace transLayer
 	{
 		if(m_bInitialize && !OnFilterTransUpIrp(pUpIrp))
 		{
-			m_cUpMutex.Lock();
+			boost::mutex::scoped_lock  lock(muUpIrp);
 			m_lstUpIrps.push_back(pUpIrp);
-			::SetEvent(m_hUp);
-			m_cUpMutex.Unlock();
+			if( cond_IrpUp != NULL )
+			{
+				cond_IrpUp->notify_one();
+			}
 		}
 		else
 			delete pUpIrp;
@@ -244,10 +180,9 @@ namespace jysoft { namespace transLayer
 	{
 		if(m_bInitialize)
 		{
-			m_cDownMutex.Lock();
+			boost::mutex::scoped_lock  lock(muUpIrp);
 			m_lstDownIrps.push_back(pDownIrp);
-			::SetEvent(m_hDown);
-			m_cDownMutex.Unlock();
+			cond_getDownIrp.notify_one();
 		}
 		else
 			delete pDownIrp;
@@ -256,16 +191,9 @@ namespace jysoft { namespace transLayer
 	//将链表中的Irp传输到上层端
 	CVirtualIrp * CFormatTransport::TransportIrpInUplst()
 	{
-		CVirtualIrp *pRtnIrp = NULL;
-		m_cUpMutex.Lock();
-		pRtnIrp = *m_lstUpIrps.begin();
+		boost::mutex::scoped_lock  lock(muUpIrp);
+		CVirtualIrp *pRtnIrp = *m_lstUpIrps.begin();
 		m_lstUpIrps.pop_front();
-		m_cUpMutex.Unlock();
-		if( m_phHaveIrp != NULL )
-		{
-			::ResetEvent(*m_phHaveIrp);
-		}
-		::SetEvent(m_hTransportFinish);
 		return pRtnIrp;
 	}
 
@@ -339,7 +267,7 @@ namespace jysoft { namespace transLayer
 	}
 
 	//过滤向上发送的Irp
-	BOOL CFormatTransport::OnFilterTransUpIrp(CVirtualIrp *pTransUpIrp)
+	bool CFormatTransport::OnFilterTransUpIrp(CVirtualIrp *pTransUpIrp)
 	{
 	//	if( pTransUpIrp && pTransUpIrp->Get_eIrpType() == eSimulateTrigger_Event )
 	//	{
@@ -362,7 +290,7 @@ namespace jysoft { namespace transLayer
 	//			}
 	//		}
 	//	}
-		return FALSE;
+		return false;
 	}
 
 	//减少过滤计数时间

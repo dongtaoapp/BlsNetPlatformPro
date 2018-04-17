@@ -70,7 +70,7 @@ namespace jysoft { namespace simulator { namespace base {
 	//注： 通过CShowRespRateUpdateInterface的串联指针，可连接相关的多个呼吸次数显示接口
 	void COpRespBuildInterface::SetRelateRespRateShowInterface(CShowRespRateUpdateInterface *pShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if ( m_pShowRespUpdate == NULL )
 		{
 			m_pShowRespUpdate = pShowInterface;
@@ -79,18 +79,16 @@ namespace jysoft { namespace simulator { namespace base {
 		{
 			m_pShowRespUpdate->SetNextInterfacePtr( pShowInterface );
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	//断开指定的呼吸次数显示接口
 	void COpRespBuildInterface::RemoveRelateRespRateShowInterface(CShowRespRateUpdateInterface *pRmvShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowRespUpdate != NULL )
 		{
 			m_pShowRespUpdate = (CShowRespRateUpdateInterface *)IBedirecteLinksVir::RemoveInterfacePtr(m_pShowRespUpdate, pRmvShowInterface);
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	/*******************************************************************************/

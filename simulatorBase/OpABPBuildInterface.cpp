@@ -29,7 +29,7 @@ namespace jysoft { namespace simulator { namespace base {
 	//注： 通过CShowABPUpdateInterface的串联指针，可连接相关的多个ABP显示接口
 	void COpABPBuildInterface::SetRelateABPShowInterface(CShowABPUpdateInterface *pShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowABPUpdate == NULL )
 		{
 			m_pShowABPUpdate   =  pShowInterface;
@@ -38,18 +38,16 @@ namespace jysoft { namespace simulator { namespace base {
 		{
 			m_pShowABPUpdate->SetNextInterfacePtr( pShowInterface );
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	//断开指定的ABP显示接口
 	void COpABPBuildInterface::RemoveRelateABPShowInterface(CShowABPUpdateInterface *pRmvShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowABPUpdate != NULL )
 		{
 			m_pShowABPUpdate = (CShowABPUpdateInterface *)IBedirecteLinksVir::RemoveInterfacePtr(m_pShowABPUpdate, pRmvShowInterface);
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	//修改ABP的值
@@ -65,12 +63,11 @@ namespace jysoft { namespace simulator { namespace base {
 			}
 			pInterfaceVir = pInterfaceVir->GetNextInterfacePtr();
 		}
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowABPUpdate != NULL )
 		{
 			m_pShowABPUpdate->OnShowABPValue(nShrinkValue, nStretchValue);
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 }}}

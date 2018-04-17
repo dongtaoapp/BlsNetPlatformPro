@@ -1,8 +1,8 @@
 #pragma once
+#include <boost/thread.hpp>
 #include ".\IGetPhysioloySimulateData.h"
 
 #include "..\common\opinterfacevir.h"
-#include "..\common\criticalMutex.h"
 
 namespace jysoft { namespace simulator { namespace base {
 
@@ -13,8 +13,8 @@ namespace jysoft { namespace simulator { namespace base {
 		COpEtCO2BuildInterface(void);
 		virtual ~COpEtCO2BuildInterface(void);
 	protected:
-		CShowEtCO2UpdateInterface             *m_pShowEtCO2Update;
-        utility::CCriticalMutex                m_cInterfaceMutex;
+		CShowEtCO2UpdateInterface*        m_pShowEtCO2Update;
+		boost::mutex                      m_cInterfaceMutex;
 	public:
 		virtual bool isKindOf(const std::string &className);
 	protected:

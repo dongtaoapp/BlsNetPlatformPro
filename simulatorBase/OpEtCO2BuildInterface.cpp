@@ -89,7 +89,7 @@ namespace jysoft { namespace simulator { namespace base {
 	//注： 通过CShowEtCO2UpdateInterface的串联指针，可连接相关的多个EtCO2显示接口
 	void COpEtCO2BuildInterface::SetRelateEtCO2ShowInterface(CShowEtCO2UpdateInterface *pShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock( m_cInterfaceMutex );
 		if( m_pShowEtCO2Update == NULL )
 		{
 			m_pShowEtCO2Update    =  pShowInterface;
@@ -98,18 +98,16 @@ namespace jysoft { namespace simulator { namespace base {
 		{
 			m_pShowEtCO2Update->SetNextInterfacePtr( pShowInterface );
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	//断开指定的EtCO2显示接口
 	void COpEtCO2BuildInterface::RemoveRelateEtCO2ShowInterface(CShowEtCO2UpdateInterface *pRmvShowEtCO2Interface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock( m_cInterfaceMutex );
 		if( m_pShowEtCO2Update  !=  NULL )
 		{
 			m_pShowEtCO2Update = (CShowEtCO2UpdateInterface *)IBedirecteLinksVir::RemoveInterfacePtr(m_pShowEtCO2Update, pRmvShowEtCO2Interface);
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 }}}

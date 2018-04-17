@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/cprlogo.png</file>
+        <file>img/info.png</file>
+        <file>img/breathlogo.png</file>
+    </qresource>
+</RCC>

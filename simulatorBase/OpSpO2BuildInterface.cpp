@@ -37,12 +37,11 @@ namespace jysoft { namespace simulator { namespace base {
 			}
 			pInterfaceVir = pInterfaceVir->GetNextInterfacePtr();
 		}
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowSpO2Update != NULL )
 		{
 			m_pShowSpO2Update->OnShowSpO2Value( nSpO2Value );
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 
@@ -54,7 +53,7 @@ namespace jysoft { namespace simulator { namespace base {
 	//注： 通过CShowSpO2UpdateInterface的串联指针，可连接相关的多个SpO2显示接口
 	void COpSpO2BuildInterface::SetRelateSpO2ShowInterface(CShowSpO2UpdateInterface *pShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowSpO2Update == NULL )
 		{
 			m_pShowSpO2Update   =  pShowInterface;
@@ -63,18 +62,16 @@ namespace jysoft { namespace simulator { namespace base {
 		{
 			m_pShowSpO2Update->SetNextInterfacePtr( pShowInterface );
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 	//断开指定的SpO2显示接口
 	void COpSpO2BuildInterface::RemoveRelateSpO2ShowInterface(CShowSpO2UpdateInterface *pRmvShowInterface)
 	{
-		m_cInterfaceMutex.Lock();
+		boost::mutex::scoped_lock  lock(m_cInterfaceMutex);
 		if( m_pShowSpO2Update != NULL )
 		{
 			m_pShowSpO2Update = (CShowSpO2UpdateInterface *)IBedirecteLinksVir::RemoveInterfacePtr(m_pShowSpO2Update, pRmvShowInterface);
 		}
-		m_cInterfaceMutex.Unlock();
 	}
 
 }}}

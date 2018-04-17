@@ -10,7 +10,7 @@ HEADERS += \
     $$PWD/showlistwnd.h \
     $$PWD/showmorelinewnd.h \
     $$PWD/showonelinewnd.h \
-    $$PWD/manwnd.h
+    #$$PWD/manwnd.h
 
 SOURCES += \
     $$PWD/qmlistwnd.cpp \
@@ -21,7 +21,7 @@ SOURCES += \
     $$PWD/showlistwnd.cpp \
     $$PWD/showmorelinewnd.cpp \
     $$PWD/showonelinewnd.cpp \
-    $$PWD/manwnd.cpp
+    #$$PWD/manwnd.cpp
 
-FORMS += \
-    $$PWD/manwnd.ui
+#FORMS += \
+    #$$PWD/manwnd.ui

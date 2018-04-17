@@ -69,7 +69,7 @@ public:
 "font-weight: normal;\n"
 "line-height: 70px;\n"
 "color: #21b0f2;\n"
-"background-color: #373950;"));
+"background-color:#232639;"));
         closeBtn = new QPushButton(SetSysWnd);
         closeBtn->setObjectName(QStringLiteral("closeBtn"));
         closeBtn->setGeometry(QRect(894, 10, 41, 41));
@@ -105,6 +105,7 @@ public:
         saveBtn = new QPushButton(SetSysWnd);
         saveBtn->setObjectName(QStringLiteral("saveBtn"));
         saveBtn->setGeometry(QRect(500, 610, 75, 31));
+        saveBtn->setLayoutDirection(Qt::LeftToRight);
         label_2 = new QLabel(SetSysWnd);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(305, 245, 16, 31));
